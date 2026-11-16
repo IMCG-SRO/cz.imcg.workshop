@@ -42,3 +42,7 @@ Jména vlastníků, kontrolujících a termíny přidělí lektor; zatím nejsou
 ## Stav implementace 16. 11. 2026
 
 Základní moduly jsou implementované v PR #24–#30, automatizace v #31. Online databáze (#12), aktivace Pages (#18) a úplný účastnický pilot (#19) zůstávají otevřené. Týmové #20–#22 zůstávají účastníkům. [Skutečné výsledky](OVERENI.md).
+
+## Dokončení databáze
+
+Projekt Workshop IMCG je aktivní, obě migrace aplikované a osm přihlášení ověřených. Přístupy týmů a reálné operace přes HTTP API prošly. ERP-03 / #12 je dokončený; #18 a #19 zůstávají pro Pages a skutečný účastnický pilot. [Aktuální ověření](OVERENI.md).

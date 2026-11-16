@@ -1,7 +1,7 @@
 # Příprava a podmínky spuštění
 
 Verze 0.1 • 16. 11. 2026 • Autor: ChatGPT.
-Úkoly správce a lektora před workshopem. Seznam není potvrzením dokončení.
+Úkoly správce a lektora před workshopem. Aktuálně je databáze a osm účtů ověřených v projektu Workshop IMCG; veřejná adresa a účastnický pilot zůstávají otevřené. [Podrobné skutečné výsledky](OVERENI.md). Starší nezaškrtnuté body níže nejsou aktuálním technickým reportem.
 
 ## Zjištěný stav
 
@@ -9,7 +9,7 @@ Verze 0.1 • 16. 11. 2026 • Autor: ChatGPT.
 - Main zatím nemá zapnutou ochranu (ověřeno čtením metadat větve 16. 11. 2026).
 - Repozitář obsahuje předchozí textová cvičení, ne ERP aplikaci.
 - Původní program má na GitHub 65 minut.
-- Uživatel uvedl, že Supabase účet není založen.
+- Původně nebyl účet založen; nově je ověřen existující projekt Workshop IMCG.
 - Čas pro nové ERP cvičení a datum konání nejsou potvrzeny.
 
 ## Provoz bez dalších plateb
@@ -66,3 +66,4 @@ Rezerva dle pilotu 15–30 minut. Pokud zůstane pouze 65 minut, ukázka a zadá
 ## Další krok přípravy
 
 Po posouzení návrhu začíná ERP-02: technický základ a pravidla práce. Současně správce může založit Supabase účet a ověřit hostingový plán. Funkční databáze a její přístupy musí být hotové před předáním aplikace účastníkům.
+

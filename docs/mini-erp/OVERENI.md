@@ -1,5 +1,24 @@
 # Záznam ověření mini ERP 0.1
 
+## Aktuální stav — sdílená databáze aktivní
+
+Projekt **Workshop IMCG** v EU je skutečně připojen. Obě migrace (erp a secure_rpc_boundaries) jsou v historii databáze. Prostředí má čtyři pracovní prostory MAIN/A/B/C, sedm účastnických účtů a lektora. Veřejná registrace je vypnutá (ověřeno přes živé Auth settings). Hesla byla předána zvlášť mimo Git.
+
+Prošlo přihlášení všech osmi účtů, čtení vlastního prostoru, sdílení vytvořeného zákazníka mezi účty 01 a 02, odmítnutí cizího prostoru (400), odmítnutí nepřihlášeného (401) a přímého zápisu do tabulky (403). Na živé databázi proběhla objednávka se dvěma položkami, faktura za 56 470 Kč, odmítnutí duplicitní faktury a úhrada. Ověřovací zákazník a uhrazený obchodní případ zůstávají v prostoru A jako označené cvičné záznamy; ostatní prostory mají výchozí data.
+
+Veřejné RPC jsou SECURITY INVOKER; privilegované implementace jsou v neexponovaném erp_private. Znovu ověřené čtení po migraci vrátilo 200. Audit má explicitní zákaz klientského přístupu. Jednorázová administrační funkce je vypnutá (410) a neobsahuje žádnou administrační operaci.
+
+14 lokálních testů a [PR kontroly](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/43851749816) prošly. [Kontroly main](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/43851987398) rovněž prošly. V prohlížeči je ověřené zobrazení přihlašovacího formuláře; samotné nové přihlášení a celý obchodní průchod byly v této fázi ověřeny přes skutečné HTTP API, nikoli vydávány za nové prohlížečové převzetí člověkem.
+
+Bezpečnostní kontrola už nehlásí původní varování k veřejným privilegovaným RPC. Zůstávají upozornění Auth na [kontrolu uniklých hesel](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection) a [volby MFA](https://supabase.com/docs/guides/auth/auth-mfa). Tyto doplňky nejsou aktivované; jde o cvičné účty s náhodně vytvořenými hesly a fiktivními daty. Health advisors jsou bez nálezů.
+
+**Zbývá:** veřejná adresa přes GitHub Pages, pilot skutečným účastníkem a potvrzení času. Poslední publikační workflow se dokončilo úspěšně jako sestavení; nasazovací job je stále podmíněn ERP_PAGES_ENABLED=true. Úspěšné sestavení se nevydává za zveřejněný web.
+
+---
+
+Následující části zachovávají historii před aktivací Supabase.
+
+
 Datum: 16. 11. 2026 • Implementace a kontrola: AI na zadání Nikoly Spěšného.
 Lidské schválení ani pilot běžným účastníkem nebyly provedeny.
 

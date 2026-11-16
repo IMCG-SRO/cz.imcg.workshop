@@ -1,7 +1,7 @@
 # Mini ERP pro Workshop 2
 
 Verze návrhu: 0.1 • Datum: 16. 11. 2026 • Autor návrhu: ChatGPT na zadání Nikoly Spěšného.
-Stav: základ aplikace implementován; existující projekt Workshop IMCG potvrzen a počáteční migrace nasazena. Online aktivace a její ověření navazují v nové větvi. [Záznam ověření](OVERENI.md).
+Stav: základ aplikace a sdílená databáze jsou aktivní. Ověřeny migrace, osm přihlášení, sdílení dat a zamítané přístupy. Veřejná adresa webu nadále čeká na aktivaci Pages. [Záznam ověření](OVERENI.md).
 
 ## Účel
 
@@ -22,7 +22,7 @@ Na skutečné malé webové aplikaci si sedm účastníků ve třech týmech 2+2
 
 ## Zatím neověřené podmínky
 
-Správce dosud nemá založený účet Supabase. Repozitář je soukromý a dostupnost Pages závisí na plánu organizace. Přístup ChatGPT → GitHub je zde funkční pro zakládání dokumentů, větve a Issues, ale celý vývojový a publikační průchod účtem běžného účastníka ještě nebyl vyzkoušen.
+Existující projekt Workshop IMCG a jeho migrace jsou ověřené. Repozitář je soukromý a dostupnost Pages závisí na plánu organizace. Přístup ChatGPT → GitHub je zde funkční pro zakládání dokumentů, větve a Issues, ale celý vývojový a publikační průchod účtem běžného účastníka ještě nebyl vyzkoušen.
 
 Původní program má na GitHub 65 minut; úplný nový scénář má pracovní odhad 150–180 minut. Termín ani navýšení času nejsou potvrzeny. [Podrobnosti a varianta přerušení](PRIPRAVA.md).
 

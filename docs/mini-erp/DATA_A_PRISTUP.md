@@ -1,6 +1,6 @@
 # Data, účty a oddělení prostředí
 
-Verze 0.1 • 16. 11. 2026 • Autor: ChatGPT. Implementační rozhodnutí v0.1: doménové kolekce níže se ukládají do jednoho JSONB dokumentu na prostor; přístup řídí tabulky erp_workspaces a erp_members a serverové příkazy. Audit příkazů je v erp_audit. Normalizované tabulky níže jsou původní logický model, nikoli fyzické schéma v0.1. Podrobnosti: [databázový návod](../../mini-erp/supabase/README.md). Živá služba zatím není zřízena.
+Verze 0.1 • 16. 11. 2026 • Autor: ChatGPT. Implementační rozhodnutí v0.1: doménové kolekce níže se ukládají do jednoho JSONB dokumentu na prostor; přístup řídí tabulky erp_workspaces a erp_members a serverové příkazy. Audit příkazů je v erp_audit. Normalizované tabulky níže jsou původní logický model, nikoli fyzické schéma v0.1. Podrobnosti: [databázový návod](../../mini-erp/supabase/README.md). Živá služba Workshop IMCG je nyní zřízena a otestována.
 
 ## Správce a účastníci
 
@@ -9,6 +9,8 @@ Supabase účet ke správě služby má správce. Účastníci mají vlastní Gi
 Správce předem založí uživatele v Auth. Přihlašovací jméno může aplikace mapovat na technický e-mailový identifikátor; formát ověří pilot, skutečné schránky účastníků nejsou nutné. Registrace veřejnosti nebude povolena. Hesla a administrátorské přihlašovací údaje se neukládají do Gitu ani nesdílejí ve veřejném chatu.
 
 ## Prostředí
+
+Aktuální implementace používá jeden existující bezplatný projekt s logickými prostory MAIN/A/B/C. Původní návrh dvou fyzických projektů níže se nepoužívá; oddělení vynucuje členství ověřované databází. Tím nevznikl další projekt ani placené větvení.
 
 - Společný projekt: aplikace z main a společná fiktivní data.
 - Testovací projekt: pracovní prostory A, B, C s vlastními daty.
