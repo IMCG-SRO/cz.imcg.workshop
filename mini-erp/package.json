@@ -7,7 +7,8 @@
     "dev": "vite --host 0.0.0.0",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "format": "prettier --write src tests vite.config.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.80.0"
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.16",
     "@types/node": "^24.19.2",
+    "prettier": "^3.10.1",
     "typescript": "^5.9.3",
     "vite": "^7.2.2",
     "vitest": "^3.2.4"

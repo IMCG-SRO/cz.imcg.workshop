@@ -1,8 +1,94 @@
-import {state,command} from '../core/store';import {esc,date,money,total,today,addDays} from '../core/rules';import {heading,table,field,modal,text,notify,badge,itemsTable,action} from '../core/ui';import type {Invoice} from '../core/types';
-import {invoiceFilter,filterControl,bindFilter} from '../extensions/invoice-filter';import {exportControl,bindExport} from '../extensions/invoice-export';
-export const invoiceStatus=(i:Invoice)=>i.paidOn?badge('● Uhrazená','green'):i.dueOn<today()?badge('● Po splatnosti','red'):badge('● Neuhrazená','orange');
-export const invoices={render:()=>heading('Faktury','Přehled vydaných dokladů a jejich úhrad.','<button class="button" id="issue-invoice">＋ Vystavit fakturu</button>')+`<section class="panel"><div class="panel-heading"><h2>Vydané faktury <span class="count">${state.invoices.length}</span></h2>${exportControl(state.invoices)}</div>${filterControl()}`+table(['Faktura','Zákazník','Splatnost','Stav','Celkem',''],invoiceFilter(state.invoices,today()).slice().reverse().map(i=>[`<strong>${esc(i.number)}</strong>`,esc(i.customer.name),date(i.dueOn),invoiceStatus(i),`<strong>${money(total(i.items))}</strong>`,`<button class="text-button" data-invoice="${esc(i.id)}">Detail ↗</button>${!i.paidOn?` · <button class="text-button" data-pay="${esc(i.id)}">Uhradit</button>`:''}`]))+'</section><p style="font-size:10px">Výukové doklady · CZK bez DPH · nejde o účetní ani daňové doklady</p>',bind:(refresh:()=>void)=>{
- document.querySelector('#issue-invoice')!.addEventListener('click',()=>{const confirmed=state.orders.filter(o=>o.status==='confirmed');if(!confirmed.length){notify('Nejprve vytvořte a potvrďte objednávku.',true);return}modal('Vystavit fakturu',`<div class="form-grid"><label class="full">Potvrzená objednávka<select name="order">${confirmed.map(o=>`<option value="${esc(o.id)}">${esc(o.number)} · ${esc(state.customers.find(c=>c.id===o.customerId)?.name)} · ${money(total(o.items))}</option>`).join('')}</select></label>${field('Datum splatnosti','due',addDays(today(),14),'date',`required min="${today()}"`)}</div><p>Údaje a položky se převezmou z objednávky. Pro každou objednávku lze vystavit jen jednu fakturu.</p>`,async f=>{await command({type:'invoice',id:text(f,'order'),dueOn:text(f,'due')});refresh();notify('Faktura vystavena.');});});
- document.querySelectorAll<HTMLElement>('[data-pay]').forEach(b=>b.onclick=action(async()=>{if(confirm('Označit fakturu jako plně uhrazenou?')){await command({type:'pay',id:b.dataset.pay!});refresh();notify('Úhrada zaznamenána.')}}));
- document.querySelectorAll<HTMLElement>('[data-invoice]').forEach(b=>b.onclick=()=>{const i=state.invoices.find(x=>x.id===b.dataset.invoice)!;modal(i.number,`<div class="detail-grid"><div><small>Odběratel</small><strong>${esc(i.customer.name)}</strong><br>${esc(i.customer.address)}</div><div><small>Stav</small>${invoiceStatus(i)}</div><div><small>Vystaveno</small>${date(i.issuedOn)}</div><div><small>Splatnost</small>${date(i.dueOn)}</div>${i.paidOn?`<div><small>Uhrazeno</small>${date(i.paidOn)}</div><div><small>Zaznamenal účet</small>${esc(i.paidBy)}</div>`:''}</div>${itemsTable(i.items)}<p>Výukový doklad · není daňovým dokladem.</p>`);});bindFilter(refresh);bindExport(state.invoices);
-}};
+import { state, command } from "../core/store";
+import { esc, date, money, total, today, addDays } from "../core/rules";
+import {
+  heading,
+  table,
+  field,
+  modal,
+  text,
+  notify,
+  badge,
+  itemsTable,
+  action,
+} from "../core/ui";
+import type { Invoice } from "../core/types";
+import {
+  invoiceFilter,
+  filterControl,
+  bindFilter,
+} from "../extensions/invoice-filter";
+import { exportControl, bindExport } from "../extensions/invoice-export";
+export const invoiceStatus = (i: Invoice) =>
+  i.paidOn
+    ? badge("● Uhrazená", "green")
+    : i.dueOn < today()
+      ? badge("● Po splatnosti", "red")
+      : badge("● Neuhrazená", "orange");
+export const invoices = {
+  render: () =>
+    heading(
+      "Faktury",
+      "Přehled vydaných dokladů a jejich úhrad.",
+      '<button class="button" id="issue-invoice">＋ Vystavit fakturu</button>',
+    ) +
+    `<section class="panel"><div class="panel-heading"><h2>Vydané faktury <span class="count">${state.invoices.length}</span></h2>${exportControl(state.invoices)}</div>${filterControl()}` +
+    table(
+      ["Faktura", "Zákazník", "Splatnost", "Stav", "Celkem", ""],
+      invoiceFilter(state.invoices, today())
+        .slice()
+        .reverse()
+        .map((i) => [
+          `<strong>${esc(i.number)}</strong>`,
+          esc(i.customer.name),
+          date(i.dueOn),
+          invoiceStatus(i),
+          `<strong>${money(total(i.items))}</strong>`,
+          `<button class="text-button" data-invoice="${esc(i.id)}">Detail ↗</button>${!i.paidOn ? ` · <button class="text-button" data-pay="${esc(i.id)}">Uhradit</button>` : ""}`,
+        ]),
+    ) +
+    '</section><p style="font-size:10px">Výukové doklady · CZK bez DPH · nejde o účetní ani daňové doklady</p>',
+  bind: (refresh: () => void) => {
+    document.querySelector("#issue-invoice")!.addEventListener("click", () => {
+      const confirmed = state.orders.filter((o) => o.status === "confirmed");
+      if (!confirmed.length) {
+        notify("Nejprve vytvořte a potvrďte objednávku.", true);
+        return;
+      }
+      modal(
+        "Vystavit fakturu",
+        `<div class="form-grid"><label class="full">Potvrzená objednávka<select name="order">${confirmed.map((o) => `<option value="${esc(o.id)}">${esc(o.number)} · ${esc(state.customers.find((c) => c.id === o.customerId)?.name)} · ${money(total(o.items))}</option>`).join("")}</select></label>${field("Datum splatnosti", "due", addDays(today(), 14), "date", `required min="${today()}"`)}</div><p>Údaje a položky se převezmou z objednávky. Pro každou objednávku lze vystavit jen jednu fakturu.</p>`,
+        async (f) => {
+          await command({
+            type: "invoice",
+            id: text(f, "order"),
+            dueOn: text(f, "due"),
+          });
+          refresh();
+          notify("Faktura vystavena.");
+        },
+      );
+    });
+    document.querySelectorAll<HTMLElement>("[data-pay]").forEach(
+      (b) =>
+        (b.onclick = action(async () => {
+          if (confirm("Označit fakturu jako plně uhrazenou?")) {
+            await command({ type: "pay", id: b.dataset.pay! });
+            refresh();
+            notify("Úhrada zaznamenána.");
+          }
+        })),
+    );
+    document.querySelectorAll<HTMLElement>("[data-invoice]").forEach(
+      (b) =>
+        (b.onclick = () => {
+          const i = state.invoices.find((x) => x.id === b.dataset.invoice)!;
+          modal(
+            i.number,
+            `<div class="detail-grid"><div><small>Odběratel</small><strong>${esc(i.customer.name)}</strong><br>${esc(i.customer.address)}</div><div><small>Stav</small>${invoiceStatus(i)}</div><div><small>Vystaveno</small>${date(i.issuedOn)}</div><div><small>Splatnost</small>${date(i.dueOn)}</div>${i.paidOn ? `<div><small>Uhrazeno</small>${date(i.paidOn)}</div><div><small>Zaznamenal účet</small>${esc(i.paidBy)}</div>` : ""}</div>${itemsTable(i.items)}<p>Výukový doklad · není daňovým dokladem.</p>`,
+          );
+        }),
+    );
+    bindFilter(refresh);
+    bindExport(state.invoices);
+  },
+};
