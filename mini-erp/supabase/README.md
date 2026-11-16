@@ -1,17 +1,29 @@
-# Připojení sdílené databáze — správce
+# Sdílená databáze mini ERP
 
-Účastníci tento postup neprovádějí. Uživatel hlásí připojení Supabase k repozitáři; cílový projekt a úspěšné nasazení je nutné ověřit.
+Potvrzený projekt: **Workshop IMCG**, ref `ubwzwlzwsddszwvxvpfc`, region EU (Irsko). Existující GitHub integrace již nasadila počáteční migraci. Nevytváříme druhý projekt ani placené databázové větve.
 
-1. V připojeném Supabase projektu ověřte integraci s tímto repozitářem, větev main a Working directory `.`. Není-li projekt ještě založen, založí jej správce; nepřidávejte duplicitní projekt bez ověření. Použijte fiktivní data.
-2. Nechte GitHub integraci aplikovat [kanonickou migraci](../../supabase/migrations/20261116102540_erp.sql). Pokud již bylo schéma vytvořené ručně, nejprve zkontrolujte historii; nepřepisujte existující data. Při ručním nasazení použijte stejný soubor. V Auth zakažte veřejné registrace. Přidejte uživatele `ucastnik01@workshop.example` až `ucastnik07@workshop.example` a lektora; nastavte hesla a ručně potvrďte technické e-mailové identity. Nejde o doručovací adresy. Hesla předejte mimo repozitář.
-3. Podle `provision.example.sql` vytvořte pracovní prostory a přiřaďte skutečná UUID uživatelů. Identita do ERP je oddělená od GitHub účtu.
-4. V Node.js 24 spusťte `node scripts/create-seed.mjs A > seed-A.sql` (z mini-erp/). Vygenerované SQL nejprve přečtěte a po exportu stávajících dat spusťte jako správce. Opakujte pro B, C, případně MAIN.
-5. Do lokálního `.env` nebo publikačních GitHub Variables vložte jen URL projektu a publishable klíč. Nikdy nevkládejte service-role klíč do webu ani Gitu. Sestavte `npm run build`.
-6. Přihlaste se, založte záznam a ověřte jej v jiném prohlížeči. Ověřte zamítnutí nepřihlášeného, nečlena, podvrženého prostoru a přímého zápisu do tabulky. Zaznamenejte výsledek; místní SQL test není náhradou skutečné konfigurace Supabase Auth.
-7. Účastník má přístup pouze do přidělených prostorů. Pro křížovou kontrolu přidá správce členství kontrolujícímu týmu. Reset je pouze operace správce přes SQL Editor po exportu dat, nikoli veřejné tlačítko.
+## Prostředí a účty
 
-## Rozhodnutí pro v0.1
+Jeden databázový projekt obsahuje oddělené prostory MAIN, A, B, C. Všichni mají MAIN, účastníci navíc svůj tým a tým, který přebírají (A kontroluje B, B kontroluje C, C kontroluje A). Lektor má všechny prostory. Členství vynucuje server, přepínač v prohlížeči oprávnění nevytváří. Účastníci nemají správu Supabase ani přímý zápis do databázových tabulek.
 
-Doménový model má kolekce zákazníků, produktů, objednávek a faktur, ale záměrně se ukládá jako jeden JSONB dokument na pracovní prostor. PostgreSQL transakce a zámek řádku zajišťují atomické příkazy. Toto nahrazuje původně navržených devět fyzických tabulek: menší migrace a stejné datové rozhraní v demu i online zjednodušují výukový projekt. Serverové příkazy kontrolují pravidla; klient nemá přímé právo měnit dokument. Není to návrh pro produkční ERP ani pro velké objemy dat.
+Založeno sedm cvičných účtů ucastnik01–07 a lektor s technickými e-mailovými identitami @workshop.example. Nebyly rozesílány pozvánky ani e-maily. Hesla předá lektor soukromě; nejsou v Gitu. Do formuláře stačí jméno bez domény. Žádná veřejná registrace v aplikaci není; config.toml požaduje její vypnutí i v Auth.
 
-Vznik, úprava a autor příkazu se zapisují do auditní tabulky. Mazání ani změnu členství účastník provádět nemůže. Automatický reset společných dat neexistuje. Free projekt se může po neaktivitě pozastavit; dostupnost ověřte před workshopem.
+Účty byly vytvořeny přes podporované Auth Admin API v krátkodobé, chráněné serverové funkci. Po dokončení je tato funkce zneaktivněná (HTTP 410) a nemá žádnou administrační operaci. Service-role klíč zůstal pouze v serverovém prostředí; nebyl načten do klienta ani vypsán.
+
+## Konfigurace aplikace
+
+Veřejná URL a publishable klíč jsou v src/core/connection.ts. Mohou být ve webu; přístup k datům vyžaduje přihlášení a členství. Jejich administrátorský protějšek se ve webu nesmí objevit. Úplný pár VITE_SUPABASE_URL a VITE_SUPABASE_PUBLISHABLE_KEY může připojení přepsat. Neúplný pár se odmítne.
+
+Main začíná v MAIN, týmové náhledy v A/B/C podle VITE_DEFAULT_WORKSPACE. Volba ?mode=demo je výslovný místní režim bez sdílených dat. Chyba online spojení do dema automaticky nepřepíná.
+
+## Migrace a bezpečnost
+
+Jediný zdroj je [kořenové supabase/migrations](../../supabase/migrations). Working directory integrace je tečka a Git větev main. Veřejné RPC jsou SECURITY INVOKER wrappery, privilegované implementace jsou v neexponovaném schématu erp_private s explicitní kontrolou členství. Audit má explicitní zákaz klientského přístupu. Před sloučením se provádí lokální SQL testy; po sloučení se ověřuje skutečná historie migrací a advisors v Supabase.
+
+V0.1 ukládá doménové kolekce jako JSONB dokument na prostor. PostgreSQL transakce a zámek řádku zajišťují atomické příkazy. Nejde o produkční účetní systém. Výchozí data jsou fiktivní: pět zákazníků, pět produktů, čtyři objednávky a čtyři faktury na prostor před ověřovacími operacemi.
+
+## Obnova dat
+
+Automatický seed je vypnutý. V Node.js 24 lze z mini-erp/ vytvořit SQL: `node scripts/create-seed.mjs A > seed-A.sql`. Správce jej před použitím přečte, exportuje aktuální data a ověří cílový prostor. Obnova není povolená běžným ERP účtům. Do Gitu nikdy neukládat exporty Auth, hesla ani relace.
+
+[Záznam skutečných kontrol](../../docs/mini-erp/OVERENI.md) · [Publikování webu](../DEPLOY.md)

@@ -1,10 +1,19 @@
+import { connection } from "./connection";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import type { State, Command } from "./types";
 import { handlers } from "../modules/commands";
 import { seed } from "./seed";
 import { today } from "./rules";
-const url = import.meta.env.VITE_SUPABASE_URL,
-  key = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const envUrl = import.meta.env.VITE_SUPABASE_URL,
+  envKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const explicitDemo =
+  new URLSearchParams(location.search).get("mode") === "demo";
+const override = Boolean(envUrl || envKey);
+const url = explicitDemo ? "" : override ? envUrl : connection.url,
+  key = explicitDemo ? "" : override ? envKey : connection.publishableKey;
+const defaultWorkspace =
+  import.meta.env.VITE_DEFAULT_WORKSPACE || (explicitDemo ? "A" : "MAIN");
+const workspaceStorageKey = "erp-workspace:" + defaultWorkspace;
 export const online = Boolean(url || key);
 let configError = "";
 export let client: SupabaseClient | null = null;
@@ -30,7 +39,8 @@ export let state: State = {
   invoices: [],
 };
 export let actor = sessionStorage.getItem("erp-actor") || "ucastnik01";
-export let workspace = sessionStorage.getItem("erp-workspace") || "A";
+export let workspace =
+  sessionStorage.getItem(workspaceStorageKey) || defaultWorkspace;
 export let memberships: { workspace_id: string; label: string }[] = [];
 export function reduce(
   s: State,
@@ -50,7 +60,7 @@ export function selectActor(a: string) {
 }
 export async function selectWorkspace(w: string) {
   workspace = w;
-  sessionStorage.setItem("erp-workspace", w);
+  sessionStorage.setItem(workspaceStorageKey, w);
   await load();
 }
 export async function load() {
@@ -119,7 +129,7 @@ export async function session() {
 export async function logout() {
   if (client) await client.auth.signOut();
   sessionStorage.removeItem("erp-actor");
-  sessionStorage.removeItem("erp-workspace");
+  sessionStorage.removeItem(workspaceStorageKey);
   state = { customers: [], products: [], orders: [], invoices: [] };
 }
 export function resetDemo() {

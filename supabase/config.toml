@@ -9,3 +9,10 @@ schema_paths = []
 # Při nasazení se existující data automaticky neobnovují.
 [db.seed]
 enabled = false
+
+# Confirmed existing project; this does not create a project or a paid branch.
+[remotes.main]
+project_id = "ubwzwlzwsddszwvxvpfc"
+
+[remotes.main.auth]
+enable_signup = false

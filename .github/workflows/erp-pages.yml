@@ -47,6 +47,7 @@ jobs:
         if: matrix.variant == 'main'
         working-directory: mini-erp
         env:
+          VITE_DEFAULT_WORKSPACE: MAIN
           VITE_SUPABASE_URL: ${{ vars.ERP_MAIN_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.ERP_MAIN_PUBLISHABLE_KEY }}
         run: npm run build
@@ -54,6 +55,7 @@ jobs:
         if: matrix.variant != 'main'
         working-directory: mini-erp
         env:
+          VITE_DEFAULT_WORKSPACE: ${{ matrix.variant }}
           VITE_SUPABASE_URL: ${{ vars.ERP_TEST_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.ERP_TEST_PUBLISHABLE_KEY }}
         run: npm run build

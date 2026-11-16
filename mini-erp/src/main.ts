@@ -123,7 +123,7 @@ export function refresh() {
   if (route !== "workshop") page?.bind(refresh);
 }
 function showLogin() {
-  app.innerHTML = `<div class="login"><div class="brand"><span class="brand-mark">i</span><span>IMCG <small>MINI ERP</small></span></div><h1>Přihlášení do ERP</h1><p>Použijte cvičný účet přidělený lektorem.</p><form id="login"><label>Přihlašovací jméno<input name="name" autocomplete="username" required placeholder="ucastnik01"></label><label>Heslo<input name="password" type="password" autocomplete="current-password" required></label><p class="error" role="alert"></p><button class="button">Přihlásit se</button></form></div>`;
+  app.innerHTML = `<div class="login"><div class="brand"><span class="brand-mark">i</span><span>IMCG <small>MINI ERP</small></span></div><h1>Přihlášení do ERP</h1><p>Použijte cvičný účet přidělený lektorem.</p><form id="login"><label>Přihlašovací jméno<input name="name" autocomplete="username" required placeholder="ucastnik01"></label><label>Heslo<input name="password" type="password" autocomplete="current-password" required></label><p class="error" role="alert"></p><button class="button">Přihlásit se</button></form><p><a href="?mode=demo#home">Vyzkoušet místní demo</a></p></div>`;
   document.querySelector<HTMLFormElement>("#login")!.onsubmit = async (e) => {
     e.preventDefault();
     const f = new FormData(e.target as HTMLFormElement);
