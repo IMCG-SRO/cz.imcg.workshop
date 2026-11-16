@@ -20,4 +20,5 @@ Původní Markdown úkoly pro úpravu textové dokumentace byly na pokyn zadavat
 
 Časová dotace nového ERP bloku není potvrzena. Původních 65 minut nestačí na celý nový scénář; [varianty](docs/mini-erp/PRIPRAVA.md).
 
-Stav: postupná implementace přes samostatná Issues a Pull Requesty. Sdílenou databázi lze aktivovat po založení Supabase projektů správcem.
+Stav: základ aplikace je implementován a ověřen v místním demu. [Výsledky a omezení](docs/mini-erp/OVERENI.md) · [Aplikace a spuštění](mini-erp/README.md) · [Publikování](mini-erp/DEPLOY.md). Sdílená databáze a veřejná adresa čekají na aktivaci správcem.
+

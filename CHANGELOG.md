@@ -1,5 +1,14 @@
 # Historie podkladů
 
+## Mini ERP 0.1 — implementace 16. 11. 2026
+
+- Nakódované zákazníci, produkty, objednávky, faktury, úhrady a přehled.
+- Připraven online adaptér, SQL migrace, izolace prostorů, seed a návody správce.
+- Doplněno 14 testů a skutečné kontroly GitHub Actions; úspěšný prohlížečový průchod místním demem.
+- Smazáno 21 původních Markdown zadání/scénářů; jejich Issues uzavřeny jako nahrazené.
+- Publikování čeká na zapnutí Pages, sdílená databáze na založení Supabase; podrobnosti v docs/mini-erp/OVERENI.md.
+
+
 ## Návrh mini ERP 0.1 — 16. 11. 2026
 
 - Doplněna specifikace aplikace, dat a přístupů, týmových rozšíření a převzetí změn.
@@ -17,3 +26,4 @@
 - Vzorová řešení zůstávají v původním lektorském balíčku mimo cvičný repozitář.
 
 Datum vydání podkladů neurčuje datum konání workshopu.
+

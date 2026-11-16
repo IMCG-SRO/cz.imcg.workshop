@@ -1,5 +1,5 @@
 import type { State } from "./types";
-import { today, addDays } from "./rules";
+import { today, addDays } from "./rules.ts";
 export function seed(day = today()): State {
   const customers = [
     ["ALFA", "Alfa kanceláře", "Praha"],
