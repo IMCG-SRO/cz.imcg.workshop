@@ -1,0 +1,10 @@
+cislo;jmeno;github_login;zadani;cilovy_soubor;kontroluje_jmeno;vetve_PR_stav
+01;DOPLNIT;DOPLNIT;zadani/01_Cislo_dokladu.md;docs/scenare/01_Cislo_dokladu.md;DOPLNIT;
+02;DOPLNIT;DOPLNIT;zadani/02_Mena.md;docs/scenare/02_Mena.md;DOPLNIT;
+03;DOPLNIT;DOPLNIT;zadani/03_Castka.md;docs/scenare/03_Castka.md;DOPLNIT;
+04;DOPLNIT;DOPLNIT;zadani/04_Datum.md;docs/scenare/04_Datum.md;DOPLNIT;
+05;DOPLNIT;DOPLNIT;zadani/05_Duplicita.md;docs/scenare/05_Duplicita.md;DOPLNIT;
+06;DOPLNIT;DOPLNIT;zadani/06_Vysledek.md;docs/scenare/06_Vysledek.md;DOPLNIT;
+07;DOPLNIT;DOPLNIT;zadani/07_Kontrola.md;docs/scenare/07_Kontrola.md;DOPLNIT;
+08;DOPLNIT;DOPLNIT;zadani/08_Priklad.md;docs/scenare/08_Priklad.md;DOPLNIT;
+09;DOPLNIT;DOPLNIT;zadani/09_Rozsah.md;docs/scenare/09_Rozsah.md;DOPLNIT;
