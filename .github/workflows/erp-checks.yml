@@ -1,10 +1,10 @@
 name: Mini ERP checks
 on:
   pull_request:
-    paths: ['mini-erp/**', '.github/workflows/erp-checks.yml']
+    paths: ['mini-erp/**', 'supabase/**', '.github/workflows/erp-checks.yml']
   push:
     branches: [main]
-    paths: ['mini-erp/**', '.github/workflows/erp-checks.yml']
+    paths: ['mini-erp/**', 'supabase/**', '.github/workflows/erp-checks.yml']
 permissions:
   contents: read
 jobs:

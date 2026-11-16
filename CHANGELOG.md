@@ -1,5 +1,12 @@
 # Historie podkladů
 
+## Připojení Supabase přes GitHub — 16. 11. 2026
+
+- Kanonická migrace přesunuta do kořenové složky supabase/migrations a vytvořena pod názvem generovaným Supabase CLI 3.1.0. Obsah SQL zůstal stejný.
+- Doplněn config.toml pro výchozí Working directory `.`; automatické seedování vypnuté.
+- CI testuje i změny kořenové databázové složky. Živé nasazení zatím není potvrzené.
+
+
 ## Mini ERP 0.1 — implementace 16. 11. 2026
 
 - Nakódované zákazníci, produkty, objednávky, faktury, úhrady a přehled.
