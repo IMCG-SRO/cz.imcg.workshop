@@ -37,3 +37,8 @@ Budoucí větve nejsou založeny předčasně: vzniknou z aktuálního main až 
 Issue nejprve obsahuje zadání a očekávání. Vlastní větev uchová změny a skutečné commity. PR odkazuje na Issue, ukazuje diff, kontroly a výsledek převzetí. Po skutečném sloučení může uzavřít Issue. Nezakládají se prázdné ani zpětně předstírané PR jen kvůli ukázce historie.
 
 Jména vlastníků, kontrolujících a termíny přidělí lektor; zatím nejsou domýšlena. Původní Markdown úkoly byly odstraněny; jejich Issues #1–#9 nejsou součástí ERP backlogu.
+
+
+## Stav implementace 16. 11. 2026
+
+Základní moduly jsou implementované v PR #24–#30, automatizace v #31. Online databáze (#12), aktivace Pages (#18) a úplný účastnický pilot (#19) zůstávají otevřené. Týmové #20–#22 zůstávají účastníkům. [Skutečné výsledky](OVERENI.md).

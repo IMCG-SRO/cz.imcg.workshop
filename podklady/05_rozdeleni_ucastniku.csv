@@ -1,10 +1,8 @@
-cislo;jmeno;github_login;issue;zadani;cilovy_soubor;kontroluje_jmeno;vetve_PR_stav
-01;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/1;zadani/01_Cislo_dokladu.md;docs/scenare/01_Cislo_dokladu.md;DOPLNIT;
-02;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/2;zadani/02_Mena.md;docs/scenare/02_Mena.md;DOPLNIT;
-03;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/3;zadani/03_Castka.md;docs/scenare/03_Castka.md;DOPLNIT;
-04;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/4;zadani/04_Datum.md;docs/scenare/04_Datum.md;DOPLNIT;
-05;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/5;zadani/05_Duplicita.md;docs/scenare/05_Duplicita.md;DOPLNIT;
-06;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/6;zadani/06_Vysledek.md;docs/scenare/06_Vysledek.md;DOPLNIT;
-07;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/7;zadani/07_Kontrola.md;docs/scenare/07_Kontrola.md;DOPLNIT;
-08;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/8;zadani/08_Priklad.md;docs/scenare/08_Priklad.md;DOPLNIT;
-09;DOPLNIT;DOPLNIT;https://github.com/IMCG-SRO/cz.imcg.workshop/issues/9;zadani/09_Rozsah.md;docs/scenare/09_Rozsah.md;DOPLNIT;
+tym;ucet_erp;github_login;role
+A;ucastnik01;;doplní lektor
+A;ucastnik02;;doplní lektor
+B;ucastnik03;;doplní lektor
+B;ucastnik04;;doplní lektor
+C;ucastnik05;;doplní lektor
+C;ucastnik06;;doplní lektor
+C;ucastnik07;;doplní lektor

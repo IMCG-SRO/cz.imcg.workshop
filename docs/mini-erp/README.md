@@ -1,7 +1,7 @@
 # Mini ERP pro Workshop 2
 
 Verze návrhu: 0.1 • Datum: 16. 11. 2026 • Autor návrhu: ChatGPT na zadání Nikoly Spěšného.
-Stav: specifikace k posouzení, aplikace ani databáze zatím nejsou vytvořeny.
+Stav: základ aplikace implementován a vyzkoušen v místním demo režimu; SQL migrace a připojení Supabase připraveny, živé projekty zatím nejsou zřízené. [Záznam ověření](OVERENI.md).
 
 ## Účel
 
@@ -27,3 +27,4 @@ Správce dosud nemá založený účet Supabase. Repozitář je soukromý a dost
 Původní program má na GitHub 65 minut; úplný nový scénář má pracovní odhad 150–180 minut. Termín ani navýšení času nejsou potvrzeny. [Podrobnosti a varianta přerušení](PRIPRAVA.md).
 
 Původní individuální textové úkoly byly na pokyn zadavatele odstraněny; historie Gitu je zachovává. Nové ERP cvičení má vlastní backlog a týmová zadání.
+

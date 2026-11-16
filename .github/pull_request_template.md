@@ -1,21 +1,14 @@
-## Zadání
+## Problém a výsledná změna
 
-Číslo úkolu nebo odkaz na issue:
+## Issue
+Refs #
 
-## Co se mění a proč
+## Ověření
+- Automatické kontroly: běh a testovaný commit.
+- Ruční scénář: vstup, očekávání, skutečný výsledek, kontrolující, datum.
+- Náhled a commit:
+- Neprovedené kontroly a omezení:
 
+## Dokumentace a rozsah
 
-## Jak jsem výsledek ověřil
-
-- [ ] Porovnal jsem celý výsledek se svou kartou zadání.
-- [ ] Ověřil jsem všechny požadované příklady.
-- [ ] Mění se pouze můj cílový soubor.
-- [ ] Soubor má aktuální verzi, skutečného autora a datum.
-
-## Kontrola kolegou
-
-Kontroluje:
-
-## Stav
-
-Připraveno ke kontrole / potřebuji pomoc:
+AI kontrola není lidské schválení. Merge řídí lektor.
