@@ -1,5 +1,13 @@
 # Historie podkladů
 
+## Aktivace sdílené databáze — 16. 11. 2026
+
+- Ověřen existující projekt Workshop IMCG a skutečně nasazená počáteční migrace.
+- Založeny prostory MAIN/A/B/C s fiktivními daty a osm Auth účtů; členství odděluje týmy a kontrolující.
+- Připravena migrace privátní implementace RPC a veřejných SECURITY INVOKER wrapperů.
+- Doplněno výchozí online připojení s veřejným publishable klíčem a výslovná volba místního dema.
+
+
 ## Připojení Supabase přes GitHub — 16. 11. 2026
 
 - Kanonická migrace přesunuta do kořenové složky supabase/migrations a vytvořena pod názvem generovaným Supabase CLI 3.1.0. Obsah SQL zůstal stejný.

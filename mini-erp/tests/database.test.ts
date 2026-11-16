@@ -1,17 +1,22 @@
 import { it, expect } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 it("SQL: izolace, zákaz přímého zápisu, transakce a obchodní příkazy", async () => {
   const db = new PGlite();
   await db.exec(
-    `create role anon; create role authenticated; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated;`,
+    `create role anon; create role authenticated; create role service_role bypassrls; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$; grant usage on schema auth to authenticated;`,
   );
-  await db.exec(
-    readFileSync(
-      new URL("../../supabase/migrations/20261116102540_erp.sql", import.meta.url),
-      "utf8",
-    ),
+  const migrations = new URL("../../supabase/migrations/", import.meta.url);
+  for (const file of readdirSync(migrations)
+    .filter((n) => n.endsWith(".sql"))
+    .sort()) {
+    await db.exec(readFileSync(new URL(file, migrations), "utf8"));
+  }
+  const rpc = await db.query<{ prosecdef: boolean }>(
+    "select prosecdef from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.proname in ('erp_apply','erp_snapshot')",
   );
+  expect(rpc.rows).toHaveLength(2);
+  expect(rpc.rows.every((x) => !x.prosecdef)).toBe(true);
   const uid = "00000000-0000-0000-0000-000000000001";
   await db.exec(
     `insert into auth.users values ('${uid}'); insert into public.erp_workspaces(id,name) values ('A','A'),('B','B'); insert into public.erp_members values ('A','${uid}','A'); set role authenticated; select set_config('request.jwt.claim.sub','${uid}',false);`,

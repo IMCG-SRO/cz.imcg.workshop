@@ -1,7 +1,7 @@
 # Mini ERP pro Workshop 2
 
 Verze návrhu: 0.1 • Datum: 16. 11. 2026 • Autor návrhu: ChatGPT na zadání Nikoly Spěšného.
-Stav: základ aplikace implementován a vyzkoušen v místním demo režimu; SQL migrace a připojení Supabase připraveny, živé projekty zatím nejsou zřízené. [Záznam ověření](OVERENI.md).
+Stav: základ aplikace implementován; existující projekt Workshop IMCG potvrzen a počáteční migrace nasazena. Online aktivace a její ověření navazují v nové větvi. [Záznam ověření](OVERENI.md).
 
 ## Účel
 

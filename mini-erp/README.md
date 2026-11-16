@@ -8,4 +8,4 @@ Node.js 22 nebo 24: `npm ci`, `npm run dev`. Kontroly: `npm test` a `npm run bui
 
 Týmová rozšíření jsou samostatné moduly v `src/extensions/`. Jejich vstupní body jsou připraveny, funkce nejsou hotové. [Zadání](../docs/mini-erp/TYMOVE_UKOLY.md).
 
-Demonstrační režim používá úložiště konkrétního prohlížeče. Není to sdílená databáze ani zabezpečené přihlašování. Online režim se nastavuje podle `supabase/README.md`; vyžaduje vlastní projekt správce.
+Výchozí připojení míří na existující projekt Workshop IMCG. Přihlašovací účty přiděluje lektor. Lokální demo lze otevřít přes `?mode=demo`; jeho data zůstávají pouze v konkrétním prohlížeči. Ve zdrojích je jen veřejná konfigurace a publishable klíč, nikoli administrátorské údaje. [Správa databáze](supabase/README.md).
