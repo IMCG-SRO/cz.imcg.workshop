@@ -1,5 +1,12 @@
 # Historie podkladů
 
+## Návrh mini ERP 0.1 — 16. 11. 2026
+
+- Doplněna specifikace aplikace, dat a přístupů, týmových rozšíření a převzetí změn.
+- Založen samostatný backlog 13 Issues včetně závislostí a podmínek převzetí.
+- Návrh má vlastní větev a Pull Request; implementace aplikace a zřízení služeb ještě neproběhly.
+- Rozlišena předchozí individuální cvičení a nové týmové cvičení; čas a dostupnost hostingu jsou otevřené podmínky.
+
 ## Verze 1.0 pro repozitář 2026 11 16
 
 - Založen rozcestník Workshopu 2 a čitelné Markdown podklady pro lektora i účastníky.
