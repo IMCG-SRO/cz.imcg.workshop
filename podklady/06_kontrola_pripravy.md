@@ -10,6 +10,7 @@ Stav první verze pro repozitář, 16. 11. 2026.
 - [x] Devět samostatných karet zadání a deset cílových souborů včetně ukázky 00.
 - [x] Postup pro větev, commit, pull request, kontrolu a sloučení.
 - [x] Prompty s názvem tohoto repozitáře a šablona pull requestu.
+- [x] Devět GitHub issues propojených s kartami zadání a cílovými soubory.
 
 ## Doplní nebo ověří lektor před workshopem
 
