@@ -11,3 +11,5 @@ export function modal(title:string,content:string,onSave?:(data:FormData)=>Promi
  dialog.querySelector('form')!.onsubmit=async e=>{e.preventDefault();if(!onSave)return;const b=dialog.querySelector<HTMLButtonElement>('[type=submit]')!;b.disabled=true;try{await onSave(new FormData(e.target as HTMLFormElement));close()}catch(e){dialog.querySelector('.error')!.textContent=e instanceof Error?e.message:String(e);b.disabled=false}};dialog.showModal();return dialog;
 }
 export const text=(f:FormData,key:string)=>String(f.get(key)??'').trim();
+export function notify(message:string,error=false){const el=document.createElement('div');el.className='toast'+(error?' failure':'');el.setAttribute('role',error?'alert':'status');el.textContent=message;document.body.append(el);setTimeout(()=>el.remove(),6000)}
+export function action(fn:()=>Promise<void>){return async()=>{try{await fn()}catch(e){notify(e instanceof Error?e.message:String(e),true)}}}
