@@ -8,7 +8,7 @@ it("SQL: izolace, zákaz přímého zápisu, transakce a obchodní příkazy", a
   );
   await db.exec(
     readFileSync(
-      new URL("../supabase/migrations/001_erp.sql", import.meta.url),
+      new URL("../../supabase/migrations/20261116102540_erp.sql", import.meta.url),
       "utf8",
     ),
   );

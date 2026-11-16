@@ -49,3 +49,7 @@ Původních 21 Markdown zadání/scénářů odstraněno v PR #23; Issues #1–#
 Úplná online připravenost (#12, #18, #19) čeká na aktivaci služeb, pilot účtem běžného účastníka, konkrétní přiřazení lidí a potvrzení času. Výchozí release tag bude vytvořen až po dokončení tohoto pilotu. Nepovažovat tuto verzi za připravenou pro ostrá firemní data.
 
 Dokud není ERP_PAGES_ENABLED=true, nasazovací job je záměrně přeskočen, aby se neopakovala známá chyba aktivace. Testy, sestavení a artifacty zůstávají aktivní.
+
+## Návazný krok — GitHub integrace Supabase
+
+Uživatel hlásí propojení Supabase s repozitářem. Migrace se přesouvá do standardního supabase/migrations/ v kořeni repozitáře a přidává se config.toml s vypnutým automatickým seedováním. Správné nastavení Working directory je teď tečka. Připojení Supabase do ChatGPT bylo potvrzeno, ale cílová databáze zatím nebyla přečtena a úspěch migrace nelze tvrdit.

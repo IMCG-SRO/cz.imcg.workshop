@@ -1,0 +1,11 @@
+# Lokální identifikátor; nejde o vzdálený project ref ani přístupový klíč.
+project_id = "imcg-workshop"
+
+[db.migrations]
+enabled = true
+schema_paths = []
+
+# Import ukázkových dat je samostatná správcovská operace.
+# Při nasazení se existující data automaticky neobnovují.
+[db.seed]
+enabled = false

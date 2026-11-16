@@ -1,9 +1,9 @@
 # Připojení sdílené databáze — správce
 
-Účastníci tento postup neprovádějí. Zatím nejsou zřízené živé projekty; nic zde nepředstírá online provoz.
+Účastníci tento postup neprovádějí. Uživatel hlásí připojení Supabase k repozitáři; cílový projekt a úspěšné nasazení je nutné ověřit.
 
-1. Založte vlastní Supabase účet a projekty pro společnou a testovací verzi. Ověřte dostupné Free limity. Použijte výhradně fiktivní data.
-2. V SQL Editoru spusťte `migrations/001_erp.sql`. V Auth zakažte veřejné registrace. Přidejte uživatele `ucastnik01@workshop.example` až `ucastnik07@workshop.example` a lektora; nastavte hesla a ručně potvrďte technické e-mailové identity. Nejde o doručovací adresy. Hesla předejte mimo repozitář.
+1. V připojeném Supabase projektu ověřte integraci s tímto repozitářem, větev main a Working directory `.`. Není-li projekt ještě založen, založí jej správce; nepřidávejte duplicitní projekt bez ověření. Použijte fiktivní data.
+2. Nechte GitHub integraci aplikovat [kanonickou migraci](../../supabase/migrations/20261116102540_erp.sql). Pokud již bylo schéma vytvořené ručně, nejprve zkontrolujte historii; nepřepisujte existující data. Při ručním nasazení použijte stejný soubor. V Auth zakažte veřejné registrace. Přidejte uživatele `ucastnik01@workshop.example` až `ucastnik07@workshop.example` a lektora; nastavte hesla a ručně potvrďte technické e-mailové identity. Nejde o doručovací adresy. Hesla předejte mimo repozitář.
 3. Podle `provision.example.sql` vytvořte pracovní prostory a přiřaďte skutečná UUID uživatelů. Identita do ERP je oddělená od GitHub účtu.
 4. V Node.js 24 spusťte `node scripts/create-seed.mjs A > seed-A.sql` (z mini-erp/). Vygenerované SQL nejprve přečtěte a po exportu stávajících dat spusťte jako správce. Opakujte pro B, C, případně MAIN.
 5. Do lokálního `.env` nebo publikačních GitHub Variables vložte jen URL projektu a publishable klíč. Nikdy nevkládejte service-role klíč do webu ani Gitu. Sestavte `npm run build`.

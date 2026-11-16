@@ -65,7 +65,7 @@ Plánované cesty (vzniknou až při implementaci):
 | mini-erp/src/extensions/invoice-filter/ | Tým A včetně vlastních testů |
 | mini-erp/src/extensions/invoice-export/ | Tým B včetně vlastních testů |
 | mini-erp/src/extensions/customer-import/ | Tým C včetně vlastních testů |
-| mini-erp/supabase/migrations/ | Verzované schéma, omezení, oprávnění a operace |
+| supabase/migrations/ | Verzované schéma, omezení, oprávnění a operace |
 | mini-erp/tests/ | Integrační scénáře a prohlížečové testy |
 | docs/mini-erp/ | Specifikace a návod |
 
@@ -82,3 +82,4 @@ Základ připraví tři nezávislé vstupní body; týmové rozšíření nesmí
 7. Po úspěšném pilotu označit výchozí verzi mini-erp-v0.1.0.
 
 Samostatná automatická, bezpečnostní a ruční ověření musí mít zaznamenané skutečné výsledky. Tento dokument jejich provedení nepotvrzuje.
+
