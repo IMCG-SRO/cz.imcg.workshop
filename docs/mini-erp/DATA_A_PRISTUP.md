@@ -1,6 +1,6 @@
 # Data, účty a oddělení prostředí
 
-Verze 0.1 • 16. 11. 2026 • Autor: ChatGPT. Návrh, nikoli nasazené schéma.
+Verze 0.1 • 16. 11. 2026 • Autor: ChatGPT. Implementační rozhodnutí v0.1: doménové kolekce níže se ukládají do jednoho JSONB dokumentu na prostor; přístup řídí tabulky erp_workspaces a erp_members a serverové příkazy. Audit příkazů je v erp_audit. Normalizované tabulky níže jsou původní logický model, nikoli fyzické schéma v0.1. Podrobnosti: [databázový návod](../../mini-erp/supabase/README.md). Živá služba zatím není zřízena.
 
 ## Správce a účastníci
 
@@ -58,3 +58,4 @@ Obnova je explicitní operace lektora pro konkrétní prostor, s potvrzením a e
 - [Pozastavení neaktivního projektu](https://supabase.com/docs/guides/platform/free-project-pausing)
 
 Konkrétní konfigurace, kapacita účtu a dostupnost prostředí zatím nebyly ověřeny.
+
