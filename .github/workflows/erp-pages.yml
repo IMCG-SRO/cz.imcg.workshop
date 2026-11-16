@@ -78,6 +78,7 @@ jobs:
         with:
           path: public
   deploy:
+    if: vars.ERP_PAGES_ENABLED == 'true'
     needs: package
     runs-on: ubuntu-latest
     permissions:

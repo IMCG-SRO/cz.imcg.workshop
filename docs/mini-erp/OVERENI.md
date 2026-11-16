@@ -38,7 +38,7 @@ Prohlížečový scénář je zde zdokumentován jako provedený přes nástroj 
 
 [Publikační běh](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/43845880935) úspěšně provedl všechny buildy a balení. Krok deploy skončil 404 s pokynem „Ensure GitHub Pages has been enabled“. Zapnutí Pages nelze provést dostupným připojeným nástrojem a cloudový prohlížeč není přihlášen do GitHubu. Nejde o selhání testů aplikace. Dostupnost Pages pro soukromý repozitář je nutné ověřit podle tarifu.
 
-Správce: [Settings → Pages](https://github.com/IMCG-SRO/cz.imcg.workshop/settings/pages), zvolit GitHub Actions jako zdroj, potom spustit publikování z main podle [návodu](../../mini-erp/DEPLOY.md). Veřejnou URL nelze uvést před úspěšným nasazením.
+Správce: [Settings → Pages](https://github.com/IMCG-SRO/cz.imcg.workshop/settings/pages), zvolit GitHub Actions jako zdroj, nastavit repository Variable ERP_PAGES_ENABLED=true a potom spustit publikování z main podle [návodu](../../mini-erp/DEPLOY.md). Veřejnou URL nelze uvést před úspěšným nasazením.
 
 Supabase účet zatím není založen. Správce musí zřídit projekty, spustit migraci, přidat cvičné identity a členství, vložit veřejnou konfiguraci a ověřit přihlášení a bezpečnost ve skutečné službě. [Připravený návod](../../mini-erp/supabase/README.md).
 
@@ -47,3 +47,5 @@ Supabase účet zatím není založen. Správce musí zřídit projekty, spustit
 Původních 21 Markdown zadání/scénářů odstraněno v PR #23; Issues #1–#9 uzavřeny jako neplánované, ne jako splněné úkoly. Jednotlivé funkce mají samostatné větve a PR #24–#31. Týmové úkoly #20–#22 jsou stále otevřené a neimplementované.
 
 Úplná online připravenost (#12, #18, #19) čeká na aktivaci služeb, pilot účtem běžného účastníka, konkrétní přiřazení lidí a potvrzení času. Výchozí release tag bude vytvořen až po dokončení tohoto pilotu. Nepovažovat tuto verzi za připravenou pro ostrá firemní data.
+
+Dokud není ERP_PAGES_ENABLED=true, nasazovací job je záměrně přeskočen, aby se neopakovala známá chyba aktivace. Testy, sestavení a artifacty zůstávají aktivní.
