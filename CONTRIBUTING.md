@@ -1,16 +1,5 @@
-# Postup spolupráce
+# Spolupráce na mini ERP
 
-1. Přečti svou kartu zadání a kritéria.
-2. Z aktuální main vytvoř větev cviceni/NN-github-login.
-3. Uprav pouze svůj cílový soubor v docs/scenare.
-4. Přečti nový text a porovnej všechny příklady se zadáním.
-5. Ulož commit s konkrétní zprávou.
-6. Otevři pull request: base main, compare tvoje větev.
-7. Uveď co se mění, proč a jak jsi to ověřil.
-8. Jiný účastník porovná Files changed s kartou zadání a přidá výsledek kontroly.
-9. Připomínky oprav ve stejné větvi dalším commitem.
-10. Sloučení řídí lektor. Po sloučení ověř výsledek v main.
+Platí [pracovní postup](docs/mini-erp/POSTUP.md) a [backlog](docs/mini-erp/BACKLOG.md). Každá hlavní funkce má nejprve Issue, vlastní větev a PR do main. Neprovádět přímé změny main. Uvádět skutečné výsledky testů a přiznat neprovedené kontroly. Práci AI označovat pravdivě; lidské schválení nevymýšlet.
 
-AI připravuje návrhy a pomáhá s kontrolou. Každý člověk musí své změně rozumět. Přístup a práci provádíme přes web GitHubu, bez lokální instalace Gitu.
-
-Při nedokončení uchovej odkaz na větev nebo pull request, poslední hotový krok a další krok.
+Původní individuální úkoly s úpravami Markdownu byly odstraněny.
