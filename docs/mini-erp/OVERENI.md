@@ -12,7 +12,7 @@ Veřejné RPC jsou SECURITY INVOKER; privilegované implementace jsou v neexpono
 
 Bezpečnostní kontrola už nehlásí původní varování k veřejným privilegovaným RPC. Zůstávají upozornění Auth na [kontrolu uniklých hesel](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection) a [volby MFA](https://supabase.com/docs/guides/auth/auth-mfa). Tyto doplňky nejsou aktivované; jde o cvičné účty s náhodně vytvořenými hesly a fiktivními daty. Health advisors jsou bez nálezů.
 
-**Zbývá:** veřejná adresa přes GitHub Pages, pilot skutečným účastníkem a potvrzení času. Poslední publikační workflow se dokončilo úspěšně jako sestavení; nasazovací job je stále podmíněn ERP_PAGES_ENABLED=true. Úspěšné sestavení se nevydává za zveřejněný web.
+**Zbývá:** veřejná adresa přes GitHub Pages, pilot skutečným účastníkem a potvrzení času. Kontrola 17. 11. 2026 potvrdila, že repozitář je nyní veřejný. Aktivační oprava odstraňuje podmínku ERP_PAGES_ENABLED a přidává kontrolu konfigurace Pages. Zdroj publikování musí být v Settings → Pages nastaven na GitHub Actions. Připojený GitHub nástroj tuto administrační změnu neumí a webový prohlížeč není přihlášený. Úspěšné sestavení se nevydává za zveřejněný web.
 
 ---
 
