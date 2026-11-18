@@ -1,5 +1,9 @@
 # Publikování přes GitHub Pages
 
+## Současný provoz
+
+Aktualizováno 18. 11. 2026. Pages jsou aktivní: [MAIN](https://imcg-sro.github.io/cz.imcg.workshop/), [A](https://imcg-sro.github.io/cz.imcg.workshop/A/), [B](https://imcg-sro.github.io/cz.imcg.workshop/B/), [C](https://imcg-sro.github.io/cz.imcg.workshop/C/). [Deploy ze 17. 11.](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/44146407098) úspěšně dokončil všechny čtyři buildy, balení i zveřejnění. Následující první aktivace je pouze postup pro případ nového nastavení.
+
 Repozitář IMCG-SRO/cz.imcg.workshop je od kontroly 17. 11. 2026 veřejný. GitHub Pages lze pro veřejný repozitář používat v bezplatném tarifu. Viditelnost repozitáře se tímto workflow nemění.
 
 ## První aktivace správcem

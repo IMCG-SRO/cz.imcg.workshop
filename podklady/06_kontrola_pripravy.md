@@ -1,16 +1,20 @@
 # Kontrola přípravy Workshopu 2
 
-Aktuální technický stav: [záznam ověření](../docs/mini-erp/OVERENI.md).
+Aktualizováno 18. 11. 2026. [Evidence ověření](../docs/mini-erp/OVERENI.md).
 
-- [x] ERP základ nakódovaný: zákazníci, produkty, objednávky, faktury, úhrada a přehled.
-- [x] Vývoj zaznamenán ve skutečných Issues, větvích a PR.
-- [x] Původní Markdown úkoly odstraněny.
-- [x] Automatické kontroly a sestavení ověřeny lokálně i v GitHub Actions.
-- [x] Základní obchodní případ vyzkoušen v prohlížeči v místním demo režimu.
-- [ ] GitHub Pages aktivní a veřejná adresa ověřena.
-- [x] Existující projekt Workshop IMCG a obě migrace ověřeny; prostory MAIN/A/B/C jsou oddělené logicky.
-- [x] Sedm ERP účtů, lektor a členství připravené; všech osm přihlášení prošlo v živé službě.
-- [ ] Proveden pilot z účtu běžného účastníka.
-- [ ] Potvrzený čas, datum a konkrétní složení týmů.
+- [x] Základ ERP obsahuje zákazníky, produkty, objednávky, faktury, úhradu a přehled.
+- [x] Příprava má skutečné Issues, větve a PR; původní Markdown úkoly jsou odstraněné.
+- [x] Základní automatické kontroly a build prošly; týmové vstupní body čekají na účastnické řešení.
+- [x] GitHub Pages publikoval společnou verzi i A/B/C: [běh 17. 11.](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/44146407098).
+- [x] Sdílená databáze Workshop IMCG a dvě migrace; čtyři logické prostory MAIN/A/B/C.
+- [x] Sedm účastnických účtů a lektor, členství a osm přihlášení ověřeny.
+- [x] Podle zprávy z 17. 11. prošla technická generálka všech tří úkolů a návrat do výchozího stavu.
+- [x] Stránky, prezentace a návody aktualizované pro týmové mini ERP.
+- [ ] Konkrétní účastníci a GitHub loginy přiřazeni v 05_rozdeleni_ucastniku.csv.
+- [ ] Ověřeny přístupy všech účastníků do GitHubu, ChatGPT, ERP a Xerox včetně potřebných originálů.
+- [ ] Doložen pilot konkrétním běžným účastníkem a čas jeho průchodu.
+- [ ] Potvrzeno datum a konečný časový rámec celého workshopu.
+- [ ] Uzavřeny zbývající podmínky Issue #19 a označeno výchozí vydání.
+- [ ] Před začátkem zkontrolovány dostupnost služeb, výchozí data a commit všech náhledů.
 
-[Podrobný seznam](../docs/mini-erp/PRIPRAVA.md). Nezaškrtnuté položky nelze považovat za hotové pouze na základě existence kódu.
+Technická generálka AI neznamená lidské převzetí. Otevřené týmové Issues #20–#22 zůstávají zadáním workshopu.

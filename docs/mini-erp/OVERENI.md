@@ -1,3 +1,29 @@
+# Aktuální ověření mini ERP
+
+Aktualizováno 18. 11. 2026. Současný přehled má přednost před níže zachovaným historickým záznamem.
+
+## Nasazení a databáze
+
+- [Společná aplikace](https://imcg-sro.github.io/cz.imcg.workshop/) a náhledy [A](https://imcg-sro.github.io/cz.imcg.workshop/A/), [B](https://imcg-sro.github.io/cz.imcg.workshop/B/), [C](https://imcg-sro.github.io/cz.imcg.workshop/C/).
+- [Publikační běh 17. 11. 2026](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/44146407098) skončil úspěchem; čtyři buildy, package a deploy mají success. Zdrojový commit 562aa7cc8685641a0c88a878967732c8d98f3d06.
+- [Kontroly main](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/44146407048) rovněž prošly.
+- Projekt Workshop IMCG, migrace erp a secure_rpc_boundaries, MAIN/A/B/C, sedm účastníků a lektor jsou ověřené z předchozího připojení. Hesla zůstávají mimo Git.
+- Issue #18 je uzavřené. Týmové #20–#22 a přípravné #19 zůstávají otevřené.
+
+## Poslední technická generálka
+
+Poslední zpráva z přípravy Workshopu 2 ze 17. 11. 2026 uvádí úspěšný průchod všech tří cvičení: filtr faktur, export CSV a import zákazníků. Uvádí 49 testů, ověření UI a sdílené databáze a následné odstranění dočasných řešení a testovacích dat s návratem do původního stavu.
+
+Tento záznam přebírá výsledek uvedené zprávy. Nejde o nový běh testů 18. 11. ani o nezávislé lidské převzetí. Číslo 49 patří k dočasně doplněným řešením generálky, nikoli k počtu testů ponechaných ve výchozím main. Původní základní sada měla 14 testů. Týmové funkce nadále čekají na účastníky.
+
+## Zbývající podmínky
+
+Datum, konečný časový rámec, konkrétní lidé a GitHub loginy, ověření jejich přístupů, doložený pilot běžným účastníkem a označení výchozího vydání. Issue #19 nelze uzavřít pouze na základě technické generálky. [Příprava](PRIPRAVA.md).
+
+# Historický záznam před aktualizací 18. 11. 2026
+
+Následující text zachovává dřívější stavy a překážky při přípravě. Pokyny k tehdy neaktivním Pages, proměnné ERP_PAGES_ENABLED a nezaložené databázi jsou překonané; pro dnešní provoz používejte aktuální přehled výše a mini-erp/DEPLOY.md.
+
 # Záznam ověření mini ERP 0.1
 
 ## Aktuální stav — sdílená databáze aktivní
@@ -72,3 +98,4 @@ Dokud není ERP_PAGES_ENABLED=true, nasazovací job je záměrně přeskočen, a
 ## Návazný krok — GitHub integrace Supabase
 
 Uživatel hlásí propojení Supabase s repozitářem. Migrace se přesouvá do standardního supabase/migrations/ v kořeni repozitáře a přidává se config.toml s vypnutým automatickým seedováním. Správné nastavení Working directory je teď tečka. Připojení Supabase do ChatGPT bylo potvrzeno, ale cílová databáze zatím nebyla přečtena a úspěch migrace nelze tvrdit.
+

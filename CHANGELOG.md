@@ -1,5 +1,14 @@
 # Historie podkladů
 
+## Aktualizace Workshopu 2 18. 11. 2026
+
+- Sjednocené aktuální stránky, prezentace a návody pro tři týmy 2+2+3.
+- Doplněny skutečné odkazy na existující Xerox, repozitář a běžící ERP.
+- Opraven stav Pages podle úspěšného deploye 17. 11.; databáze i účty jsou připravené.
+- Zapsána poslední zpráva o technické generálce všech tří úloh a návratu do výchozího stavu; odlišeno od lidského převzetí.
+- Zachovány otevřené podmínky #19, zadání #20–#22 a nepotvrzené datum a konečný čas.
+- Starší záznamy níže popisují tehdejší stav, nikoli dnešní překážky.
+
 ## Aktivace sdílené databáze — 16. 11. 2026
 
 - Ověřen existující projekt Workshop IMCG a skutečně nasazená počáteční migrace.

@@ -7,7 +7,7 @@ Návrh pro výukovou aplikaci. Nejde o produkční SAP ani účetní systém.
 
 Fiktivní obchodní firma prodává několik produktů. Proces: zákazník → koncept objednávky → potvrzená objednávka → jedna faktura → označení úhrady. Český web, měna CZK, bez DPH, slev a kurzových přepočtů.
 
-Základ bude předem implementován a ověřen. Filtrování faktur, export CSV a import zákazníků jsou záměrně ponechány týmům. PDF/OCR není povinnou součástí a nebude v prvním zadání.
+Základ je implementován; aktuální provoz a kontroly popisuje [záznam ověření](OVERENI.md). Filtrování faktur, export CSV a import zákazníků jsou záměrně ponechány týmům. PDF/OCR není povinnou součástí a nebude v prvním zadání.
 
 Mimo rozsah: účetnictví, daňové doklady podle zákona, sklad, nákup, personalistika, bankovní integrace, SAP, e-mailové odesílání, skutečné zákaznické údaje, částečné platby, storna a mazání dokladů. Faktury budou označeny jako výukové doklady.
 
@@ -54,9 +54,9 @@ Počet objednávek zahrnuje všechny její stavy, bez dvojího započítání. S
 
 ## Technologie a oddělení modulů
 
-Pracovní volba: TypeScript + Vite, jednoduché HTML/CSS rozhraní, Supabase klient a PostgreSQL, Vitest a Playwright. Bez samostatného aplikačního serveru. Změna technologie vyžaduje zapsaný důvod do návrhového Issue.
+Implementace v0.1: TypeScript + Vite, HTML/CSS rozhraní, Supabase klient a PostgreSQL, Vitest a SQL testy přes PGlite. Prohlížečové průchody byly provedeny při přípravě; samostatný Playwright runner není součástí výchozí v0.1. Bez samostatného aplikačního serveru. Změna technologie vyžaduje zapsaný důvod do návrhového Issue.
 
-Plánované cesty (vzniknou až při implementaci):
+Implementované cesty a připravené vstupní body týmových rozšíření:
 
 | Cesta | Odpovědnost |
 | --- | --- |
@@ -66,10 +66,10 @@ Plánované cesty (vzniknou až při implementaci):
 | mini-erp/src/extensions/invoice-export/ | Tým B včetně vlastních testů |
 | mini-erp/src/extensions/customer-import/ | Tým C včetně vlastních testů |
 | supabase/migrations/ | Verzované schéma, omezení, oprávnění a operace |
-| mini-erp/tests/ | Integrační scénáře a prohlížečové testy |
+| mini-erp/tests/ | Automatické integrační a SQL scénáře |
 | docs/mini-erp/ | Specifikace a návod |
 
-Základ připraví tři nezávislé vstupní body; týmové rozšíření nesmí vyžadovat úpravu sdíleného registračního souboru, routeru, databáze ani závislostí. Testy rozšíření jsou pod jeho vlastní složkou. Přístupová vrstva pro čtení faktur a atomický import zákazníků je hotová před workshopem.
+Základ obsahuje tři nezávislé vstupní body; týmové rozšíření nesmí vyžadovat úpravu sdíleného registračního souboru, routeru, databáze ani závislostí. Testy rozšíření jsou pod jeho vlastní složkou. Přístupová vrstva pro čtení faktur a atomický import zákazníků je hotová před workshopem.
 
 ## Převzetí výchozí verze
 
