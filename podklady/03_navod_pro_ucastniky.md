@@ -40,7 +40,7 @@ Prostor nabízí souhrny a vybrané detaily; přesnou specifikaci ověřujete v 
 1. Otevřete [ERP](https://imcg-sro.github.io/cz.imcg.workshop/), přihlaste se přiděleným účtem a zkontrolujte pracovní prostor, režim a verzi. Náhledy jsou [A](https://imcg-sro.github.io/cz.imcg.workshop/A/), [B](https://imcg-sro.github.io/cz.imcg.workshop/B/) a [C](https://imcg-sro.github.io/cz.imcg.workshop/C/).
 2. Přečtěte své Issue. Před implementací stanovte běžný, chybný a hraniční případ s očekávaným výsledkem.
 3. Z aktuálního main vytvořte týmovou větev: A feature/erp-11-filtr-faktur, B feature/erp-12-export-faktur, C feature/erp-13-import-zakazniku. V týmu používejte jeden hlavní zapisující chat s AI a role si střídejte.
-4. Nechte AI načíst specifikaci a mini-erp/AGENTS.md, vysvětlit zadání a navrhnout plán se soubory. Měňte vlastní rozšíření a testy; sdílené části domluvte s lektorem.
+4. Nechte AI načíst [pravidla repozitáře](../AGENTS.md), [pokyny pro mini ERP](../mini-erp/AGENTS.md) a [specifikaci](../docs/mini-erp/SPECIFIKACE.md). Požádejte ji o vysvětlení zadání a plán se soubory. Měňte vlastní rozšíření a testy. Sdílené části domluvte s lektorem.
 5. S AI doplňte testy podle zadání. Skutečně spusťte npm test a npm run build v mini-erp/ a kontroly GitHub Actions. Přečtěte chybu a opravte příčinu.
 6. Otevřete PR do main s odkazem na Issue. Uveďte co se mění, skutečné výsledky kontrol, URL náhledu a commit. Publikování týmových náhledů z main spouští lektor.
 7. Převezměte práci přiděleného týmu. Na správném commitu proveďte běžný, chybný a hraniční scénář a výsledek zapište do PR. Autor vlastní práci neschvaluje.
@@ -49,7 +49,7 @@ Prostor nabízí souhrny a vybrané detaily; přesnou specifikaci ověřujete v 
 ## Prompty pro práci s AI
 
 ```text
-Read Issue [URL], docs/mini-erp/SPECIFIKACE.md, TYMOVE_UKOLY.md and mini-erp/AGENTS.md in IMCG-SRO/cz.imcg.workshop. First explain the acceptance criteria in Czech and propose a small plan with affected files. Work only in [team branch], never directly in main. Implement only our extension and its tests. Derive expected results from the assignment. Report only checks actually run. Open a PR linked to the Issue; do not merge without the lecturer's instruction.
+Read Issue [URL], AGENTS.md, mini-erp/AGENTS.md, docs/mini-erp/SPECIFIKACE.md and docs/mini-erp/TYMOVE_UKOLY.md in IMCG-SRO/cz.imcg.workshop. Explain the acceptance criteria in Czech and propose a plan with affected files. Work in [team branch] on our extension and its tests. Derive expected results from the assignment. Report checks actually run and the tested commit. Open a PR with an Issue reference. The lecturer manages the merge.
 ```
 
 ```text

@@ -19,10 +19,10 @@ Dřívější proměnná `ERP_PAGES_ENABLED` už není potřeba a workflow ji ne
 
 Skutečnou adresu ukáže úspěšný deploy v prostředí github-pages. Kořen je společná verze, cesty `/A/`, `/B/`, `/C/` jsou náhledy týmů. Do vzniku týmové větve používá náhled main; zobrazený commit identifikuje skutečný zdroj.
 
-Spouštění z feature větve je záměrně blokované. Při úpravách týmových větví spustí lektor workflow z main; každý běh znovu sestaví všechny čtyři aktuální varianty, takže nepřepíše jiné náhledy starší kopií.
+Při úpravách týmových větví spustí lektor workflow z `main`. Každý běh sestaví společnou verzi z commitu, který běh spustil, a samostatně zvolí zdroj pro každý týmový náhled. Automatické spuštění z `main` vyžaduje změnu aplikace nebo publikačního workflow.
 
 Výchozí veřejná konfigurace míří na Workshop IMCG. Další GitHub Variables nejsou pro toto připojení nutné. Pro jiný projekt nebo oddělená připojení nastavte GitHub Variables `ERP_MAIN_URL`, `ERP_MAIN_PUBLISHABLE_KEY`, `ERP_TEST_URL`, `ERP_TEST_PUBLISHABLE_KEY`. Jen veřejné klíče; service-role ani hesla sem nepatří. URL a klíč zadávat vždy jako pár.
 
 Po publikování zkontrolujte získanou adresu, přihlášení, izolaci a správné databázové cíle. V Actions musí být vidět skutečné výsledky kontrol.
 
-`Mini ERP checks` provádí testy a build v každém PR a ukládá sestavený web jako artifact. Nepoužívá žádná databázová hesla a nepíše do sdílené databáze. Build týmových náhledů má pouze read oprávnění, nasazovací job nespouští jejich kód.
+`Mini ERP checks` provádí testy a build v každém PR do `main`, včetně PR měnících jen dokumentaci, a ukládá sestavený web jako artefakt. Testy pracují lokálně. Build týmových náhledů má pouze oprávnění ke čtení. Nasazovací job přebírá hotový statický balík.

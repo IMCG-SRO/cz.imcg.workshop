@@ -1,7 +1,7 @@
 ## Problém a výsledná změna
 
 ## Issue
-Refs #
+<!-- Vlož odkaz nebo číslo Issue. U cvičení použij běžný odkaz bez uzavíracího klíčového slova, aby Issue zůstalo otevřené do ověření společné verze. -->
 
 ## Ověření
 - Automatické kontroly: běh a testovaný commit.

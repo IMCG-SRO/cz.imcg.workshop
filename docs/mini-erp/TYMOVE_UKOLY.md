@@ -56,7 +56,7 @@ Větev: `feature/erp-13-import-zakazniku`.
 
 ## Společná fixture faktur
 
-V automatických testech je dnes 2026-11-16 v Europe/Prague. Při generování online seed dat se stejné relativní vztahy odvodí od skutečného dne workshopu.
+Pro tuto testovací sadu je „dnes“ pevně `2026-11-16` v `Europe/Prague`. Tabulka uvádí samostatná testovací data. Živá aplikace používá skutečné datum a záznamy právě vybraného prostoru. Při ruční kontrole proto odvoď očekávání ze splatnosti a úhrady v náhledu. Pro přesný hraniční scénář použij tuto sadu nebo místní demo.
 
 | Faktura | Splatnost | Úhrada | Částka |
 | --- | --- | --- | --- |

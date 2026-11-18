@@ -34,7 +34,7 @@ Budoucí větve nejsou založeny předčasně: vzniknou z aktuálního main až 
 
 ## Evidence práce
 
-Issue nejprve obsahuje zadání a očekávání. Vlastní větev uchová změny a skutečné commity. PR odkazuje na Issue, ukazuje diff, kontroly a výsledek převzetí. Po skutečném sloučení může uzavřít Issue. Nezakládají se prázdné ani zpětně předstírané PR jen kvůli ukázce historie.
+Issue nejprve obsahuje zadání a očekávání. Vlastní větev uchová změny a skutečné commity. PR odkazuje na Issue, ukazuje diff, kontroly a výsledek převzetí. Týmové Issue uzavře lektor po ověření publikované společné verze. Pro ukázku historie použij skutečné PR z přípravy.
 
 Jména vlastníků, kontrolujících a termíny přidělí lektor; zatím nejsou domýšlena. Původní Markdown úkoly byly odstraněny; jejich Issues #1–#9 nejsou součástí ERP backlogu.
 
