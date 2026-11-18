@@ -30,7 +30,7 @@ Otevřít PR do main s odkazem na Issue. Použít následující minimum:
 Co požadavek řeší a jak se chová výsledek.
 
 ## Zadání
-Closes #SKUTECNE_CISLO_ISSUE
+Refs #SKUTECNE_CISLO_ISSUE
 
 ## Ověření
 - Automatické: odkaz na běh a testovaný commit.
@@ -42,7 +42,7 @@ Closes #SKUTECNE_CISLO_ISSUE
 Co bylo aktualizováno a případně proč změna návodu není nutná.
 ```
 
-Zástupné hodnoty je nutné před odevzdáním nahradit. Funkční PR musí obsahovat také příslušné testy. Čistě dokumentační PR uvádí kontrolu obsahu a odkazů; nesmí tvrdit testování neexistující aplikace.
+Zástupné hodnoty před odevzdáním nahraď. U týmového PR použij obyčejný odkaz `Refs #číslo`, aby lektor mohl Issue uzavřít až po ověření zveřejněné změny. `Closes`, `Fixes` nebo `Resolves` by je uzavřelo už při sloučení do `main`. Funkční PR obsahuje i příslušné testy. Čistě dokumentační PR uvádí skutečný rozsah ověření obsahu a odkazů.
 
 ## 6. Převzetí jiným týmem
 
@@ -71,4 +71,4 @@ Uložit commit a odkaz na draft PR. Uvést poslední funkční krok, skutečné 
 
 ## Prompt pro zahájení
 
-„Přečti Issue [odkaz], specifikaci v docs/mini-erp a platné AGENTS.md. Nejprve shrň podmínky převzetí a navrhni malý plán se seznamem souborů. Pracuj pouze ve větvi [větev], nikdy přímo v main. Zachovej rozsah modulu. Očekávané výsledky testů odvoď ze zadání. Dokládej jen kontroly, které skutečně proběhly. Změnu předej jako PR s vazbou na Issue; bez pokynu lektora ji neslučuj.“
+„Přečti Issue [odkaz], `AGENTS.md`, `mini-erp/AGENTS.md`, `docs/mini-erp/SPECIFIKACE.md` a `docs/mini-erp/TYMOVE_UKOLY.md`. Shrň podmínky převzetí a navrhni plán se seznamem souborů. Pracuj ve větvi [větev] a měň jen vlastní modul s testy. Očekávané výsledky odvoď ze zadání. Dolož skutečně provedené kontroly a testovaný commit. Předej PR s odkazem na Issue. Sloučení řídí lektor.“

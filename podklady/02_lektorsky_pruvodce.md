@@ -44,7 +44,7 @@ Nejprve předveď hotový obchodní případ: zákazník, objednávka se dvěma 
 
 Tým A (2 lidé) řeší #20 filtr faktur, B (2) #21 export CSV, C (3) #22 import zákazníků. Autor zadání a kontrolující nejsou totožní: A kontroluje B, B kontroluje C, C kontroluje A. V týmu určete zapisujícího, testujícího a ve třech také konzultanta požadavku; role lze střídat.
 
-Týmy mění jen vlastní složku pod mini-erp/src/extensions/ a vlastní testy. Sdílenou změnu nejprve domluv. Použij [postup a zahajovací prompt](../docs/mini-erp/POSTUP.md), [přesná kritéria](../docs/mini-erp/TYMOVE_UKOLY.md) a mini-erp/AGENTS.md.
+Týmy mění jen vlastní složku pod `mini-erp/src/extensions/` a vlastní testy. Sdílenou změnu nejprve domluv. Použij [postup a zahajovací prompt](../docs/mini-erp/POSTUP.md), [přesná kritéria](../docs/mini-erp/TYMOVE_UKOLY.md) a oba soubory s pokyny pro AI, [kořenový](../AGENTS.md) i [pro mini ERP](../mini-erp/AGENTS.md).
 
 ## Náhledy a testy
 

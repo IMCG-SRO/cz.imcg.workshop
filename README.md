@@ -19,6 +19,7 @@ Základ obsahuje zákazníky, produkty, objednávky, faktury, úhrady a přehled
 - [Specifikace a dokumentace](docs/mini-erp/README.md)
 - [Týmová zadání a očekávání](docs/mini-erp/TYMOVE_UKOLY.md)
 - [Pracovní postup](docs/mini-erp/POSTUP.md)
+- [Pokyny pro Codex v repozitáři](AGENTS.md) a [v mini ERP](mini-erp/AGENTS.md)
 - [Backlog a stav Issues](docs/mini-erp/BACKLOG.md)
 - [Příprava a délka bloku](docs/mini-erp/PRIPRAVA.md)
 - [Provedené kontroly](docs/mini-erp/OVERENI.md)

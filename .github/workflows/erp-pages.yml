@@ -2,8 +2,12 @@ name: Publish ERP and team previews
 on:
   workflow_dispatch:
   push:
-    branches: [main, feature/erp-11-filtr-faktur, feature/erp-12-export-faktur, feature/erp-13-import-zakazniku]
-    paths: ['mini-erp/**', '.github/workflows/erp-pages.yml']
+    branches: [main]
+    paths:
+      - 'mini-erp/**'
+      - '!mini-erp/**.md'
+      - '!mini-erp/.env.example'
+      - '.github/workflows/erp-pages.yml'
 permissions:
   contents: read
 concurrency:
@@ -30,7 +34,7 @@ jobs:
         env:
           SOURCE_BRANCH: ${{ matrix.branch }}
         run: |
-          if git show-ref --verify --quiet "refs/remotes/origin/$SOURCE_BRANCH"; then
+          if [ "$SOURCE_BRANCH" != main ] && git show-ref --verify --quiet "refs/remotes/origin/$SOURCE_BRANCH"; then
             git checkout --detach "origin/$SOURCE_BRANCH"
           fi
           printf 'VITE_APP_COMMIT=%s (%s)\n' "$(git rev-parse --short HEAD)" '${{ matrix.variant }}' >> "$GITHUB_ENV"
