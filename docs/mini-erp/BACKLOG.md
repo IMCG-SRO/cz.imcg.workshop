@@ -39,10 +39,14 @@ Issue nejprve obsahuje zadání a očekávání. Vlastní větev uchová změny 
 Jména vlastníků, kontrolujících a termíny přidělí lektor; zatím nejsou domýšlena. Původní Markdown úkoly byly odstraněny; jejich Issues #1–#9 nejsou součástí ERP backlogu.
 
 
-## Stav implementace 16. 11. 2026
+## Aktuální stav 18. 11. 2026
 
-Základní moduly jsou implementované v PR #24–#30, automatizace v #31. Online databáze (#12), aktivace Pages (#18) a úplný účastnický pilot (#19) zůstávají otevřené. Týmové #20–#22 zůstávají účastníkům. [Skutečné výsledky](OVERENI.md).
+| Položky | Stav |
+| --- | --- |
+| ERP-01 až ERP-09, Issues #10–#18 | Uzavřené; základ, databáze i publikování připravené |
+| ERP-10, Issue #19 | Otevřené; technická generálka podle zprávy z 17. 11. proběhla, zbývá účastnický pilot, organizační podmínky a označení výchozího vydání |
+| ERP-11 až ERP-13, Issues #20–#22 | Otevřené úkoly workshopu; dočasná řešení generálky odstraněna |
 
-## Dokončení databáze
+[Společný web](https://imcg-sro.github.io/cz.imcg.workshop/) běží. [Deploy](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/44146407098) a [kontroly main](https://github.com/IMCG-SRO/cz.imcg.workshop/actions/runs/44146407048) ze 17. 11. prošly. [Přesné rozlišení ověření](OVERENI.md).
 
-Projekt Workshop IMCG je aktivní, obě migrace aplikované a osm přihlášení ověřených. Přístupy týmů a reálné operace přes HTTP API prošly. ERP-03 / #12 je dokončený; #18 a #19 zůstávají pro Pages a skutečný účastnický pilot. [Aktuální ověření](OVERENI.md).
+Datum, konečný časový rámec a konkrétní přiřazení lidí nejsou potvrzeny.

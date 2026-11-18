@@ -1,5 +1,7 @@
 # Podklady Workshopu 2
 
+Verze 2.1 · 18. 11. 2026. [Přehled](https://chatgpt.com/space/page_c1ccd2a35d7081a497a6980d45ae6089) · [ERP](https://imcg-sro.github.io/cz.imcg.workshop/) · [Xerox](https://chatgpt.com/space/page_6af572749f0481a4b558f621dea35aaf).
+
 - [Program a příprava](01_program_a_priprava.md)
 - [Lektorský průvodce](02_lektorsky_pruvodce.md)
 - [Návod pro účastníky](03_navod_pro_ucastniky.md)

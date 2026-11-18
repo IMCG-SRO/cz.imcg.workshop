@@ -4,17 +4,17 @@ Verze 0.1 • 16. 11. 2026 • Autor: ChatGPT. Implementační rozhodnutí v0.1:
 
 ## Správce a účastníci
 
-Supabase účet ke správě služby má správce. Účastníci mají vlastní GitHub účty pro repozitář a oddělené cvičné identity do ERP (ucastnik01–07). Identita ERP nebude navázána na osobní GitHub OAuth. Lektor vede přiřazení člověk → cvičný účet, aby šlo vysvětlit autorství změny. Sdílené heslo celého týmu není výchozí volba.
+Supabase účet ke správě služby má správce. Účastníci mají vlastní GitHub účty pro repozitář a oddělené cvičné identity do ERP (ucastnik01–07). Identita ERP není navázána na osobní GitHub OAuth. Lektor vede přiřazení člověk → cvičný účet, aby šlo vysvětlit autorství změny. Sdílené heslo celého týmu není výchozí volba.
 
-Správce předem založí uživatele v Auth. Přihlašovací jméno může aplikace mapovat na technický e-mailový identifikátor; formát ověří pilot, skutečné schránky účastníků nejsou nutné. Registrace veřejnosti nebude povolena. Hesla a administrátorské přihlašovací údaje se neukládají do Gitu ani nesdílejí ve veřejném chatu.
+Správce založil sedm účastnických identit ucastnik01–07 a lektora v Auth. Formulář mapuje jméno bez domény na technický identifikátor @workshop.example; skutečné schránky účastníků nejsou nutné. Veřejná registrace je vypnutá. Hesla a administrátorské přihlašovací údaje se neukládají do Gitu ani nesdílejí ve veřejném chatu.
 
 ## Prostředí
 
 Aktuální implementace používá jeden existující bezplatný projekt s logickými prostory MAIN/A/B/C. Původní návrh dvou fyzických projektů níže se nepoužívá; oddělení vynucuje členství ověřované databází. Tím nevznikl další projekt ani placené větvení.
 
-- Společný projekt: aplikace z main a společná fiktivní data.
-- Testovací projekt: pracovní prostory A, B, C s vlastními daty.
-- Náhled větve vždy míří do testovacího projektu. Identifikátor prostoru z URL ani prohlížeče sám nezakládá oprávnění.
+- MAIN: aplikace z main a společná fiktivní data.
+- A, B, C: týmové pracovní prostory s vlastními daty uvnitř stejného projektu Workshop IMCG.
+- Náhled větve začíná v odpovídajícím prostoru A/B/C. Identifikátor prostoru z URL ani prohlížeče sám nezakládá oprávnění.
 - Kontrolující tým dostane předem přidělené členství v kontrolovaném prostoru. Prostor je viditelně označen; přístup se po kontrole může odebrat.
 - Jde o logické oddělení uvnitř jednoho testovacího projektu, nikoli placené databázové větve.
 - SQL migrace v oddělených přípravných větvích nasazuje správce postupně. Git merge sám databázi nemění.
@@ -59,5 +59,5 @@ Obnova je explicitní operace lektora pro konkrétní prostor, s potvrzením a e
 - [Supabase: aktuální limity Free](https://supabase.com/pricing)
 - [Pozastavení neaktivního projektu](https://supabase.com/docs/guides/platform/free-project-pausing)
 
-Konkrétní konfigurace, kapacita účtu a dostupnost prostředí zatím nebyly ověřeny.
+Konfigurace Workshop IMCG, migrace, osm přihlášení a oddělení dat byly ověřeny v přípravě. Aktuální dostupnost účastníkům se kontroluje před workshopem. [Stav ověření](OVERENI.md).
 

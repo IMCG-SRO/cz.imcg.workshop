@@ -1,30 +1,27 @@
 # Mini ERP pro Workshop 2
 
-Verze návrhu: 0.1 • Datum: 16. 11. 2026 • Autor návrhu: ChatGPT na zadání Nikoly Spěšného.
-Stav: základ aplikace a sdílená databáze jsou aktivní. Ověřeny migrace, osm přihlášení, sdílení dat a zamítané přístupy. Veřejná adresa webu nadále čeká na aktivaci Pages. [Záznam ověření](OVERENI.md).
+Aktualizováno 18. 11. 2026. [Společná aplikace](https://imcg-sro.github.io/cz.imcg.workshop/) · [Tým A](https://imcg-sro.github.io/cz.imcg.workshop/A/) · [Tým B](https://imcg-sro.github.io/cz.imcg.workshop/B/) · [Tým C](https://imcg-sro.github.io/cz.imcg.workshop/C/).
 
-## Účel
+Sedm účastníků ve třech týmech 2+2+3 si na malé webové aplikaci vyzkouší zadání práce AI, vlastní větev, automatické testy, nezávislé ruční převzetí a sloučení do main.
 
-Na skutečné malé webové aplikaci si sedm účastníků ve třech týmech 2+2+3 vyzkouší zadání práce AI, vývoj ve větvi, automatické testy, nezávislé ruční převzetí a sloučení do main. Hlavním výsledkem je srozumitelná spolupráce a dohledatelná změna.
+## Připravený základ
 
-## Co bude připraveno
+České rozhraní, přihlášení, zákazníci, produkty, objednávky, faktury, úhrady a přehled. Aplikace je v mini-erp/. GitHub Pages běží, databáze Workshop IMCG má MAIN/A/B/C a osm účtů. Účastníci Supabase nenastavují a SQL nevyvíjejí.
 
-České webové rozhraní, cvičné přihlášení, zákazníci, produkty, objednávky, faktury, evidence úhrady a přehled. Sdílená databáze bude připravena správcem; účastníci ji nemusí nastavovat ani psát SQL. Vyvíjí se v existujícím repozitáři, aplikace bude v mini-erp/.
+Tým A řeší filtr faktur #20, B export CSV #21 a C import zákazníků #22. Dočasná řešení technické generálky byla podle zprávy z 17. 11. odstraněna; týmové úkoly zůstávají otevřené. [Stav a přesné rozlišení ověření](OVERENI.md).
 
-## Dokumenty
+## Dokumentace
 
 - [Funkční specifikace](SPECIFIKACE.md)
-- [Datový model a pravidla přístupu](DATA_A_PRISTUP.md)
-- [Issues, závislosti a větve](BACKLOG.md)
-- [Týmová zadání a očekávané výsledky](TYMOVE_UKOLY.md)
-- [Pracovní postup a předání změny](POSTUP.md)
-- [Příprava, podmínky spuštění a otevřené body](PRIPRAVA.md)
+- [Data a přístupy](DATA_A_PRISTUP.md)
+- [Issues a větve](BACKLOG.md)
+- [Týmová zadání a očekávání](TYMOVE_UKOLY.md)
+- [Postup a předání změny](POSTUP.md)
+- [Příprava a zbývající kroky](PRIPRAVA.md)
+- [Program](../../podklady/01_program_a_priprava.md)
 
-## Zatím neověřené podmínky
+## Čas a organizace
 
-Existující projekt Workshop IMCG a jeho migrace jsou ověřené. Repozitář je soukromý a dostupnost Pages závisí na plánu organizace. Přístup ChatGPT → GitHub je zde funkční pro zakládání dokumentů, větve a Issues, ale celý vývojový a publikační průchod účtem běžného účastníka ještě nebyl vyzkoušen.
+Plný ERP blok má odhad 150–180 minut. Původních 65 minut pokryje jen ukázku a dílčí práci; zbytek zůstane v commitu a draft PR pro pokračování. Části 1 a 2 mají přednost. Datum a konečná délka celého workshopu nejsou potvrzeny.
 
-Původní program má na GitHub 65 minut; úplný nový scénář má pracovní odhad 150–180 minut. Termín ani navýšení času nejsou potvrzeny. [Podrobnosti a varianta přerušení](PRIPRAVA.md).
-
-Původní individuální textové úkoly byly na pokyn zadavatele odstraněny; historie Gitu je zachovává. Nové ERP cvičení má vlastní backlog a týmová zadání.
-
+Zbývá konkrétní rozdělení lidí a účtů, ověření jejich přístupů, doložený účastnický pilot a podmínky výchozího vydání v #19. Původních devět individuálních textových úkolů zůstává pouze v historii Gitu.
