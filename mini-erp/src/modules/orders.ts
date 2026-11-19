@@ -1,0 +1,117 @@
+import { state, command } from "../core/store";
+import { esc, date, money, total, today } from "../core/rules";
+import {
+  heading,
+  table,
+  field,
+  modal,
+  text,
+  notify,
+  badge,
+  itemsTable,
+  action,
+} from "../core/ui";
+import type { Item } from "../core/types";
+export const statusLabel = (status: string) =>
+  status === "draft"
+    ? badge("Koncept")
+    : status === "confirmed"
+      ? badge("Potvrzená", "blue")
+      : badge("Fakturovaná", "green");
+export const orders = {
+  render: () =>
+    heading(
+      "Objednávky",
+      "Od prvního požadavku k potvrzené zakázce.",
+      '<button class="button" id="new-order">＋ Nová objednávka</button>',
+    ) +
+    '<section class="panel"><div class="panel-heading"><h2>Obchodní objednávky <span class="count">' +
+    state.orders.length +
+    "</span></h2></div>" +
+    table(
+      ["Objednávka", "Zákazník", "Vytvořeno", "Stav", "Celkem", ""],
+      state.orders
+        .slice()
+        .reverse()
+        .map((o) => [
+          `<strong>${esc(o.number)}</strong>`,
+          esc(state.customers.find((c) => c.id === o.customerId)?.name),
+          date(o.createdOn),
+          statusLabel(o.status),
+          `<strong>${money(total(o.items))}</strong>`,
+          `<button class="text-button" data-order="${esc(o.id)}">Detail ↗</button>${o.status === "draft" ? ` · <button class="text-button" data-confirm="${esc(o.id)}">Potvrdit</button>` : ""}`,
+        ]),
+    ) +
+    "</section>",
+  bind: (refresh: () => void) => {
+    const edit = (id?: string) => {
+      const o = state.orders.find((x) => x.id === id);
+      if (o && o.status !== "draft") {
+        modal(
+          o.number,
+          `<div class="detail-grid"><div><small>Zákazník</small>${esc(state.customers.find((c) => c.id === o.customerId)?.name)}</div><div><small>Stav</small>${statusLabel(o.status)}</div></div>${itemsTable(o.items)}`,
+        );
+        return;
+      }
+      if (!state.products.length || !state.customers.length) {
+        notify("Nejprve založte zákazníka a produkt.", true);
+        return;
+      }
+      const dialog = modal(
+        o ? "Upravit " + o.number : "Nová objednávka",
+        `<label>Zákazník<select name="customer" required>${state.customers.map((c) => `<option value="${esc(c.id)}" ${o?.customerId === c.id ? "selected" : ""}>${esc(c.name)}</option>`).join("")}</select></label><h3>Položky objednávky</h3><div id="order-items"></div><button class="button secondary" id="add-item" type="button">＋ Přidat položku</button><p class="muted">Ceny v Kč bez DPH. Po potvrzení se objednávka již neupravuje.</p>`,
+        async (f) => {
+          const items: Item[] = Array.from(
+            dialog.querySelectorAll<HTMLElement>(".order-row"),
+          ).map((row) => {
+            const p = state.products.find(
+              (p) => p.id === row.querySelector("select")!.value,
+            )!;
+            return {
+              productId: p.id,
+              name: p.name,
+              price: p.price,
+              quantity: Number(row.querySelector("input")!.value),
+            };
+          });
+          await command({
+            type: "order",
+            data: {
+              id: o?.id || crypto.randomUUID(),
+              number: o?.number || "",
+              customerId: text(f, "customer"),
+              items,
+              status: "draft",
+              createdOn: today(),
+            },
+          });
+          refresh();
+          notify("Koncept objednávky uložen.");
+        },
+      );
+      const add = (item?: Item) => {
+        const row = document.createElement("div");
+        row.className = "order-row";
+        row.innerHTML = `<select aria-label="Produkt">${state.products.map((p) => `<option value="${esc(p.id)}" ${item?.productId === p.id ? "selected" : ""}>${esc(p.name)} · ${money(item?.productId === p.id ? item.price : p.price)}</option>`).join("")}</select><input aria-label="Množství" type="number" min="1" max="999" step="1" required value="${item?.quantity || 1}"><button type="button" aria-label="Odebrat položku">×</button>`;
+        row.querySelector("button")!.onclick = () => row.remove();
+        dialog.querySelector("#order-items")!.append(row);
+      };
+      (o?.items || [undefined]).forEach(add);
+      dialog.querySelector("#add-item")!.addEventListener("click", () => add());
+    };
+    document
+      .querySelector("#new-order")!
+      .addEventListener("click", () => edit());
+    document
+      .querySelectorAll<HTMLElement>("[data-order]")
+      .forEach((b) => (b.onclick = () => edit(b.dataset.order)));
+    document.querySelectorAll<HTMLElement>("[data-confirm]").forEach(
+      (b) =>
+        (b.onclick = action(async () => {
+          await command({ type: "confirm", id: b.dataset.confirm! });
+          refresh();
+          notify("Objednávka potvrzena.");
+        })),
+    );
+  },
+};
