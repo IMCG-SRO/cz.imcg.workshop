@@ -1,0 +1,100 @@
+name: Publish ERP and team previews
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'mini-erp/**'
+      - '!mini-erp/**.md'
+      - '!mini-erp/.env.example'
+      - '.github/workflows/erp-pages.yml'
+permissions:
+  contents: read
+concurrency:
+  group: erp-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    # Never publish a workflow loaded from an unreviewed feature branch.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - { variant: main, branch: main }
+          - { variant: A, branch: feature/erp-11-filtr-faktur }
+          - { variant: B, branch: feature/erp-12-export-faktur }
+          - { variant: C, branch: feature/erp-13-import-zakazniku }
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Select branch (use main until team starts)
+        env:
+          SOURCE_BRANCH: ${{ matrix.branch }}
+        run: |
+          if [ "$SOURCE_BRANCH" != main ] && git show-ref --verify --quiet "refs/remotes/origin/$SOURCE_BRANCH"; then
+            git checkout --detach "origin/$SOURCE_BRANCH"
+          fi
+          printf 'VITE_APP_COMMIT=%s (%s)\n' "$(git rev-parse --short HEAD)" '${{ matrix.variant }}' >> "$GITHUB_ENV"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: mini-erp/package-lock.json
+      - run: npm ci
+        working-directory: mini-erp
+      - run: npm test
+        working-directory: mini-erp
+      - name: Build shared version
+        if: matrix.variant == 'main'
+        working-directory: mini-erp
+        env:
+          VITE_DEFAULT_WORKSPACE: MAIN
+          VITE_SUPABASE_URL: ${{ vars.ERP_MAIN_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.ERP_MAIN_PUBLISHABLE_KEY }}
+        run: npm run build
+      - name: Build team preview
+        if: matrix.variant != 'main'
+        working-directory: mini-erp
+        env:
+          VITE_DEFAULT_WORKSPACE: ${{ matrix.variant }}
+          VITE_SUPABASE_URL: ${{ vars.ERP_TEST_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.ERP_TEST_PUBLISHABLE_KEY }}
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: erp-${{ matrix.variant }}
+          path: mini-erp/dist
+  package:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: erp-*
+          path: builds
+      - run: |
+          mkdir public
+          cp -a builds/erp-main/. public/
+          for team in A B C; do mkdir "public/$team"; cp -a "builds/erp-$team/." "public/$team/"; done
+          touch public/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check GitHub Pages configuration
+        uses: actions/configure-pages@v5
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

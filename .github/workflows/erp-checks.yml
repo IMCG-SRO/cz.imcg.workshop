@@ -1,0 +1,32 @@
+name: Mini ERP checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    paths: ['mini-erp/**', 'supabase/**', '.github/workflows/erp-checks.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mini-erp
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: mini-erp/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mini-erp-web
+          path: mini-erp/dist
+          retention-days: 7
