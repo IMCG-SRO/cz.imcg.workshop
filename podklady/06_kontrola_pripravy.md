@@ -1,6 +1,6 @@
 # Kontrola přípravy Workshopu 2
 
-Aktualizováno 18. 11. 2026. [Evidence ověření](../docs/mini-erp/OVERENI.md).
+Aktualizováno 19. 11. 2026. [Evidence ověření](../docs/mini-erp/OVERENI.md).
 
 - [x] Základ ERP obsahuje zákazníky, produkty, objednávky, faktury, úhradu a přehled.
 - [x] Příprava má skutečné Issues, větve a PR; původní Markdown úkoly jsou odstraněné.
@@ -13,7 +13,8 @@ Aktualizováno 18. 11. 2026. [Evidence ověření](../docs/mini-erp/OVERENI.md).
 - [ ] Konkrétní účastníci a GitHub loginy přiřazeni v 05_rozdeleni_ucastniku.csv.
 - [ ] Ověřeny přístupy všech účastníků do GitHubu, ChatGPT, ERP a Xerox včetně potřebných originálů.
 - [ ] Doložen pilot konkrétním běžným účastníkem a čas jeho průchodu.
-- [ ] Potvrzeno datum a konečný časový rámec celého workshopu.
+- [x] Termín cvičení je pátek 27. 11. 2026.
+- [ ] Potvrzen konečný časový rámec celého workshopu.
 - [ ] Uzavřeny zbývající podmínky Issue #19 a označeno výchozí vydání.
 - [ ] Před začátkem zkontrolovány dostupnost služeb, výchozí data a commit všech náhledů.
 

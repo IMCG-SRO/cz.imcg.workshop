@@ -48,7 +48,7 @@ export function seed(day = today()): State {
     customer: { ...customers[i] },
     items: structuredClone(o.items),
     issuedOn: addDays(day, -14),
-    dueOn: addDays(day, [-1, 0, 1, -5][i]),
+    dueOn: addDays(day, [-1, 0, 30, -5][i]),
     paidOn: i === 3 ? addDays(day, -2) : null,
     paidBy: i === 3 ? "lektor" : null,
   }));
