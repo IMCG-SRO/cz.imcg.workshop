@@ -24,6 +24,6 @@ V0.1 ukládá doménové kolekce jako JSONB dokument na prostor. PostgreSQL tran
 
 ## Obnova dat
 
-Automatický seed je vypnutý. V Node.js 24 lze z mini-erp/ vytvořit SQL: `node scripts/create-seed.mjs A > seed-A.sql`. Správce jej před použitím přečte, exportuje aktuální data a ověří cílový prostor. Obnova není povolená běžným ERP účtům. Do Gitu nikdy neukládat exporty Auth, hesla ani relace.
+Automatický seed je vypnutý. V Node.js 24 lze z `mini-erp/` vytvořit SQL s daty pro den cvičení příkazem `node scripts/create-seed.mjs A 2026-11-27 > seed-A.sql`. Vynecháním data se použije aktuální den v `Europe/Prague`. Správce SQL před použitím přečte, exportuje aktuální data a ověří cílový prostor. Obnova není povolená běžným ERP účtům. Do Gitu nikdy neukládat exporty Auth, hesla ani relace.
 
 [Záznam skutečných kontrol](../../docs/mini-erp/OVERENI.md) · [Publikování webu](../DEPLOY.md)

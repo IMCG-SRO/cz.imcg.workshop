@@ -56,24 +56,24 @@ Větev: `feature/erp-13-import-zakazniku`.
 
 ## Společná fixture faktur
 
-Pro tuto testovací sadu je „dnes“ pevně `2026-11-16` v `Europe/Prague`. Tabulka uvádí samostatná testovací data. Živá aplikace používá skutečné datum a záznamy právě vybraného prostoru. Při ruční kontrole proto odvoď očekávání ze splatnosti a úhrady v náhledu. Pro přesný hraniční scénář použij tuto sadu nebo místní demo.
+Pro tuto testovací sadu je „dnes“ pátek 27. 11. 2026 (`2026-11-27`) v `Europe/Prague`, kdy probíhá cvičení. Živá aplikace používá skutečný den a faktury právě vybraného prostoru. Při zkoušce v jiný den si pro automatický test nastav pevné datum `2026-11-27`. Pro samostatný test hranice „zítra“ použij 28. 11. 2026 jako splatnost kopie neuhrazené faktury FA-003 v testovacích datech.
 
 | Faktura | Splatnost | Úhrada | Částka |
 | --- | --- | --- | --- |
-| F001 | 2026-11-15 | neuhrazená | 1 000,00 Kč |
-| F002 | 2026-11-16 | neuhrazená | 2 000,00 Kč |
-| F003 | 2026-11-17 | neuhrazená | 3 000,00 Kč |
-| F004 | 2026-11-15 | uhrazená | 4 000,00 Kč |
+| FA-001 | 2026-11-26 | neuhrazená | 1 800,00 Kč |
+| FA-002 | 2026-11-27 | neuhrazená | 3 600,00 Kč |
+| FA-003 | 2026-12-27 | neuhrazená | 5 400,00 Kč |
+| FA-004 | 2026-11-22 | uhrazená | 7 200,00 Kč |
 
 Očekávání:
-- Všechny + všechny: F001–F004.
-- Neuhrazené + všechny: F001–F003.
-- Neuhrazené + po splatnosti: pouze F001.
-- Uhrazené + po splatnosti: pouze F004 (filtr data je samostatný; údaj „neuhrazené po splatnosti“ na přehledu F004 nezahrnuje).
-- Neuhrazené + dnes a později: F002 a F003.
+- Všechny + všechny: FA-001 až FA-004.
+- Neuhrazené + všechny: FA-001 až FA-003.
+- Neuhrazené + po splatnosti: pouze FA-001.
+- Uhrazené + po splatnosti: pouze FA-004. Přehled „neuhrazené po splatnosti“ počítá pouze neuhrazené faktury.
+- Neuhrazené + dnes a později: FA-002 a FA-003.
 - Uhrazené + dnes a později: prázdný výsledek.
-- Přehled: neuhrazeno 6 000,00 Kč, neuhrazeno po splatnosti 1 000,00 Kč.
-- Export obsahuje všechny čtyři faktury bez ohledu na filtr.
+- Přehled této testovací sady ukazuje 10 800,00 Kč neuhrazených faktur, z toho 1 800,00 Kč po splatnosti.
+- Export celé testovací sady obsahuje všechny čtyři faktury bez ohledu na filtr. V živém prostoru export zahrne i případné další faktury přidané při cvičení.
 
 ## Vzory pro import
 

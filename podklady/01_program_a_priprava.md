@@ -1,6 +1,6 @@
 # Workshop 2 Program a příprava
 
-Verze 2.1 · 18. 11. 2026. Sedm účastníků, tři týmy 2+2+3. Datum konání a konečný časový rámec nejsou potvrzeny.
+Verze 2.1 · 19. 11. 2026. Sedm účastníků, tři týmy 2+2+3. Cvičení proběhne v pátek 27. 11. 2026. Konečný časový rámec se ještě upřesní.
 
 ## Cíl
 
@@ -16,7 +16,7 @@ Verze 2.1 · 18. 11. 2026. Sedm účastníků, tři týmy 2+2+3. Datum konání 
 | 3 Mini ERP a GitHub | Týmové zadání, vývoj s AI, testy, PR, převzetí a merge | odhad 150–180 min |
 | Uzavření | Výsledek, odkaz na PR a další krok | 5 min |
 
-Celý scénář tak vyžaduje přibližně 235–265 minut. Původní rámec 9:30–12:00 zůstává kratší variantou: části 1 a 2 proběhnou celé, ERP dostane 65 minut a rozpracovaná změna se uchová v commitu a draft PR. Zbytek se dokončí v navazujícím bloku. Nový konec ani datum se tímto materiálem nestanovují.
+Celý scénář tak vyžaduje přibližně 235–265 minut. Původní rámec 9:30–12:00 zůstává kratší variantou: části 1 a 2 proběhnou celé, ERP dostane 65 minut a rozpracovaná změna se uchová v commitu a draft PR. Zbytek se dokončí v navazujícím bloku.
 
 ## 1 Kontrola hotových úkolů
 
@@ -44,7 +44,7 @@ Jeden hlavní zapisující chat na tým, role si účastníci střídají. Nejpr
 
 - Základ ERP, databáze, osm přihlášení, týmové prostory a publikování jsou připravené. [Stav a důkazy](../docs/mini-erp/OVERENI.md).
 - Technická generálka všech tří cvičení byla podle poslední zprávy dokončena 17. 11.; prostředí se vrátilo do výchozího stavu.
-- Doplnit datum, finální délku a [konkrétní rozdělení lidí a GitHub účtů](05_rozdeleni_ucastniku.csv).
+- Doplnit finální délku a [konkrétní rozdělení lidí a GitHub účtů](05_rozdeleni_ucastniku.csv).
 - Před setkáním ověřit přístupy každého účastníka, přihlášení do ERP, dostupnost SharePointu a publikovaný commit.
 - Dokončit otevřené organizační podmínky [#19](https://github.com/IMCG-SRO/cz.imcg.workshop/issues/19), včetně účastnického pilotu a označení výchozího vydání.
 

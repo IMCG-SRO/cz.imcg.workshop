@@ -1,6 +1,6 @@
 # Příprava a podmínky Workshopu 2
 
-Aktualizováno 18. 11. 2026. [Skutečné kontroly a historie](OVERENI.md).
+Aktualizováno 19. 11. 2026. [Skutečné kontroly a historie](OVERENI.md).
 
 ## Připravené prostředí
 
@@ -16,7 +16,8 @@ Základ ERP funguje. Podle poslední zprávy z 17. 11. prošly všechny tři tý
 - [x] Přesná zadání #20–#22 a oddělené složky rozšíření.
 - [x] Ověřená automatizace testů, buildu a náhledů.
 - [x] Technický zkušební průchod a návrat do výchozího stavu podle zprávy z 17. 11.
-- [ ] Potvrdit datum a časový rámec.
+- [x] Termín cvičení je pátek 27. 11. 2026.
+- [ ] Potvrdit časový rámec.
 - [ ] Doplnit skutečné lidi, GitHub loginy, role a neveřejné předání ERP účtů.
 - [ ] Ověřit přístup každého účastníka do ChatGPT, GitHubu, Xerox a příslušných originálů.
 - [ ] Doložit pilot konkrétním běžným účastníkem a změřit čas.
