@@ -11,7 +11,8 @@ Aktualizováno 19. 11. 2026. [Evidence ověření](../docs/mini-erp/OVERENI.md).
 - [x] Podle zprávy z 17. 11. prošla technická generálka všech tří úkolů a návrat do výchozího stavu.
 - [x] Stránky, prezentace a návody aktualizované pro týmové mini ERP.
 - [ ] Konkrétní účastníci a GitHub loginy přiřazeni v 05_rozdeleni_ucastniku.csv.
-- [ ] Ověřeny přístupy všech účastníků do GitHubu, ChatGPT, ERP a Xerox včetně potřebných originálů.
+- [ ] Ověřeny přístupy účastníků do GitHubu, ChatGPT a ERP.
+- [ ] Pro lektorskou ukázku ověřen přístup lektora do prostoru Xerox France a k vybranému originálu na SharePointu.
 - [ ] Doložen pilot konkrétním běžným účastníkem a čas jeho průchodu.
 - [x] Termín cvičení je pátek 27. 11. 2026.
 - [ ] Potvrzen konečný časový rámec celého workshopu.

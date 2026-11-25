@@ -1,6 +1,6 @@
 # Ukázka pracovního prostoru Xerox
 
-Výklad probíhá česky. Samotná projektová dokumentace a níže uvedené prompty používají angličtinu podle pracovních pravidel projektu.
+Ukázku vede Nikola. Účastníci sledují postup bez vlastního úkolu. Výklad probíhá česky, projektová dokumentace a prompty zůstávají anglicky.
 
 [Otevřít projektový prostor](https://chatgpt.com/space/page_6af572749f0481a4b558f621dea35aaf) · [How to Work with This Space](https://chatgpt.com/space/page_5e555369c93481a499861a09ad54d169)
 
@@ -12,13 +12,12 @@ Výklad probíhá česky. Samotná projektová dokumentace a níže uvedené pro
 - Odkaz na SharePoint sám neznamená načtení souboru. Pro přesné ověření je potřeba připojený SharePoint a oprávněný účet.
 - Dotaz odpovídá jen v chatu. Změna dokumentace vyžaduje konkrétní zadání a řízený postup.
 
-## Praktická ukázka
+## Postup lektora
 
-1. Otevři Project Home a How to Work with This Space.
-2. Ukaž navigaci, souhrnnou stránku a konkrétní zdroj. Podklady pro živou ukázku předem vybere Nikola.
+1. Otevři Project Home a How to Work with This Space. Vysvětli, proč prostor vznikl, komu slouží a co v něm tým najde.
+2. Ukaž cestu od přehledu přes souhrnnou stránku ke konkrétnímu originálu. Předem ověř, že ho ze svého účtu na SharePointu otevřeš.
 3. Polož jednu otázku, vyžádej zdroj a ověř jedno tvrzení. Ukaž také otázku, na kterou podklady odpověď neposkytují.
-4. Každý účastník položí vlastní konkrétní dotaz a ověří odpověď ve zdroji.
-5. Pro ukázku změny použij určenou cvičnou stránku. Postupuj podle projektových pravidel pro archiv a Page Updated. Předem vyber malou změnu, která se vejde do ukázky.
+4. Pro ukázku změny použij určenou cvičnou stránku. Postupuj podle projektových pravidel pro archiv a Page Updated. Předem vyber malou změnu, která se vejde do ukázky.
 
 ## Dotaz bez změn
 

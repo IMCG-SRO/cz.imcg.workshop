@@ -4,7 +4,7 @@ Verze 2.1 · 18. 11. 2026. [Program](01_program_a_priprava.md) · [Aplikace](htt
 
 ## Před zahájením
 
-Otevři společnou aplikaci a náhledy A/B/C, ověř zobrazený commit a online režim. Sdílená databáze a Pages již fungují. Přiřaď sedm lidí k týmům a ERP účtům; hesla předej jednotlivě. Přístup správce nenahrazuje kontrolu účtů účastníků. Ověř připojení GitHubu a přístup ke Xerox a jeho zdrojům.
+Otevři společnou aplikaci a náhledy A/B/C, ověř zobrazený commit a online režim. Sdílená databáze a Pages již fungují. Přiřaď sedm lidí k týmům a ERP účtům; hesla předej jednotlivě. Přístup správce nenahrazuje kontrolu účtů účastníků. Ověř připojení GitHubu. Z účtu, ze kterého povedeš ukázku, ověř přístup do prostoru Xerox France a k vybranému originálu na SharePointu.
 
 V main zůstává základ aplikace s připravenými vstupními body rozšíření. Zkušební řešení všech tří úkolů byla podle zprávy z 17. 11. odstraněna. [Kontrolní seznam](06_kontrola_pripravy.md) a [evidence ověření](../docs/mini-erp/OVERENI.md).
 
@@ -14,7 +14,7 @@ Vyhraď 25 minut. Každý krátce představí pracovní pokus a zkušenost, srov
 
 ## Část 2 Xerox France
 
-Vyhraď 45 minut podle [připravené ukázky](04_ukazka_xerox.md):
+Celý 45minutový blok vedeš ty podle [připravené ukázky](04_ukazka_xerox.md). Účastníci sledují postup bez vlastního cvičení:
 
 | Délka | Ukázka |
 | --- | --- |
@@ -22,7 +22,7 @@ Vyhraď 45 minut podle [připravené ukázky](04_ukazka_xerox.md):
 | 8 min | Struktura, souhrn a konkrétní originální zdroj |
 | 10 min | Dotaz, zdroj odpovědi a kontrola jednoho tvrzení |
 | 7 min | Návrh krátkého výstupu a řízená změna na cvičné stránce |
-| 8 min | Vlastní dotazy účastníků |
+| 8 min | Lektorská ukázka, jak postupovat, když odpověď nelze doložit zdrojem |
 | 7 min | Pravidla spolupráce a společné vyhodnocení |
 
 Projektová dokumentace zůstává anglicky, výklad česky. Při pouhém dotazu odpověď zůstává v chatu. Pro ukázku zápisu předem urči bezpečný cíl. Před nahrazením textu archivuj přesnou starou verzi a po změně doplň Page Updated se zadavatelem, editorem, časem Europe/Prague a archivním odkazem. SharePointové originály se nemění. [Závazný postup prostoru](https://chatgpt.com/space/page_5e555369c93481a499861a09ad54d169).

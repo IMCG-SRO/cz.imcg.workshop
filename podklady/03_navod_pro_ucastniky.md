@@ -4,7 +4,7 @@ Verze 2.1 · 18. 11. 2026. [Přehled workshopu](https://chatgpt.com/space/page_c
 
 ## Co si připravit
 
-Přineste hotový Můj první pracovní pokus na vlastní podstránce, zkušenost s Chatem a Workem, vlastní plugin nebo skill s výsledkem testu a ranní automatizaci se skutečným výstupem. Přihlaste se do firemního ChatGPT a svého GitHub účtu. Ověřte přístup k Xerox, jeho zdrojům a repozitáři.
+Přineste hotový Můj první pracovní pokus na vlastní podstránce, zkušenost s Chatem a Workem, vlastní plugin nebo skill s výsledkem testu a ranní automatizaci se skutečným výstupem. Přihlaste se do firemního ChatGPT a svého GitHub účtu. Ověřte přístup k repozitáři.
 
 GitHub účet určuje autorství změny kódu. Oddělený cvičný ERP účet ucastnik01–07 slouží k fiktivním datům, přidělí jej lektor. Správu Supabase nepotřebujete.
 
@@ -12,11 +12,11 @@ GitHub účet určuje autorství změny kódu. Oddělený cvičný ERP účet uc
 
 Během přibližně dvou minut ukažte svůj pracovní pokus, přínos a jednu otázku. Úkoly během společného kola nedokončujeme.
 
-## 2 Práce nad Xerox France
+## 2 Lektorská ukázka Xerox France
 
-Otevřete [projektový prostor](https://chatgpt.com/space/page_6af572749f0481a4b558f621dea35aaf) a [pracovní pravidla](https://chatgpt.com/space/page_5e555369c93481a499861a09ad54d169). Najděte relevantní souhrn a konkrétní zdroj. Položte jednu věcnou otázku, otevřete uvedený podklad a ověřte alespoň jedno tvrzení. Dokumentace i projektové prompty jsou anglicky, společný výklad česky.
+Lektor projde [projektový prostor](https://chatgpt.com/space/page_6af572749f0481a4b558f621dea35aaf) a [pracovní pravidla](https://chatgpt.com/space/page_5e555369c93481a499861a09ad54d169). Vysvětlí, k čemu prostor slouží, ukáže, kde najít souhrn a původní zdroj, a na jednom dotazu předvede ověření odpovědi AI. Ukázku jen sledujete. Vlastní dotaz ani přihlášení do Xerox či SharePointu pro tento blok nepotřebujete. Dokumentace a prompty jsou anglicky, výklad česky.
 
-Příklad otázky bez zápisu:
+Vzor dotazu bez zápisu pro pozdější použití:
 
 ```text
 Read How to Work with This Space first:
