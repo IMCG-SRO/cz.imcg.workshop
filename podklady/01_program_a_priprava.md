@@ -4,14 +4,14 @@ Verze 2.1 · 19. 11. 2026. Sedm účastníků, tři týmy 2+2+3. Cvičení prob�
 
 ## Cíl
 
-Účastníci sdílejí zkušenosti z prvního workshopu, naučí se ověřovat odpovědi nad reálnou projektovou dokumentací a společně dodají malou změnu webové aplikace pomocí AI a GitHubu.
+Účastníci sdílejí zkušenosti z prvního workshopu, v lektorské ukázce uvidí, jak se pracuje s reálnou projektovou dokumentací a jak ověřit odpověď AI a společně dodají malou změnu webové aplikace pomocí AI a GitHubu.
 
 ## Program a čas
 
 | Část | Obsah a výsledek | Délka |
 | --- | --- | --- |
 | 1 Kontrola předchozích úkolů | Osobní pracovní pokus, Chat a Work, vlastní plugin nebo skill, skutečný výsledek ranní automatizace; zkušenost a otázka každého | 25 min |
-| 2 Prostor Xerox France | Orientace, konkrétní otázka, ověření tvrzení ve zdroji a pravidla řízené změny | 45 min |
+| 2 Prostor Xerox France | Lektor vysvětlí účel prostoru a předvede navigaci, dotaz na AI, ověření odpovědi ve zdroji a řízenou změnu | 45 min |
 | Přestávka | Přihlášení a přechod na ERP | 10 min |
 | 3 Mini ERP a GitHub | Týmové zadání, vývoj s AI, testy, PR, převzetí a merge | odhad 150–180 min |
 | Uzavření | Výsledek, odkaz na PR a další krok | 5 min |
@@ -26,7 +26,7 @@ Každý přinese vlastní podstránku a formulář Můj první pracovní pokus, 
 
 Použijeme existující [projektový prostor](https://chatgpt.com/space/page_6af572749f0481a4b558f621dea35aaf) a [How to Work with This Space](https://chatgpt.com/space/page_5e555369c93481a499861a09ad54d169). Výklad probíhá česky, dokumentace a projektové prompty zůstávají anglicky. Prostor je strukturovaná dokumentace se souhrny a vybranými detaily; originály jsou na SharePointu.
 
-Každý položí konkrétní otázku a ověří jedno tvrzení. Rozlišuje datum stavu projektu od data úpravy stránky. Pro čtení originálních souborů potřebuje oprávnění i propojený SharePoint. Otázka nic nemění. Změnu smí lektor ukázat na předem určené cvičné stránce podle pravidel archivu a Page Updated. [Scénář a prompty](04_ukazka_xerox.md).
+Lektor projde prostor, vysvětlí, k čemu slouží, a ukáže, jak najít relevantní stránku a původní zdroj. Položí ukázkový dotaz a ve zdroji ověří jedno tvrzení. Vysvětlí rozdíl mezi datem stavu projektu a datem úpravy stránky i mezi dotazem bez zápisu a změnou dokumentace. Řízenou změnu předvede na určené cvičné stránce podle pravidel archivu a Page Updated. Účastníci ukázku sledují bez vlastního cvičení. [Scénář a prompty](04_ukazka_xerox.md).
 
 ## 3 Týmové mini ERP
 
@@ -45,7 +45,7 @@ Jeden hlavní zapisující chat na tým, role si účastníci střídají. Nejpr
 - Základ ERP, databáze, osm přihlášení, týmové prostory a publikování jsou připravené. [Stav a důkazy](../docs/mini-erp/OVERENI.md).
 - Technická generálka všech tří cvičení byla podle poslední zprávy dokončena 17. 11.; prostředí se vrátilo do výchozího stavu.
 - Doplnit finální délku a [konkrétní rozdělení lidí a GitHub účtů](05_rozdeleni_ucastniku.csv).
-- Před setkáním ověřit přístupy každého účastníka, přihlášení do ERP, dostupnost SharePointu a publikovaný commit.
+- Před setkáním ověřit přístupy účastníků do ChatGPT a GitHubu, přihlášení do ERP a publikovaný commit. Pro ukázku Xerox ověřit z účtu lektora přístup do prostoru a k vybranému originálu na SharePointu.
 - Dokončit otevřené organizační podmínky [#19](https://github.com/IMCG-SRO/cz.imcg.workshop/issues/19), včetně účastnického pilotu a označení výchozího vydání.
 
 [Kontrolní seznam](06_kontrola_pripravy.md) · [Podrobná příprava ERP](../docs/mini-erp/PRIPRAVA.md)
